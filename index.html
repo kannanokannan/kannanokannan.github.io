@@ -39,14 +39,16 @@
 
   :root {
     --bg: #0a0a0a;
-    --surface: #141414;
-    --border: #242424;
+    --surface: #131313;
+    --surface-strong: #181818;
+    --border: #303030;
     --text: #e2e2e2;
-    --muted: #777;
-    --faint: #333;
+    --muted: #9a9a9a;
+    --faint: #4a4a4a;
     --amber: #d4a853;
     --amber-dim: #8a6a30;
     --teal: #2a7d6e;
+    --violet: #7468d6;
     --mono: 'IBM Plex Mono', monospace;
     --sans: 'IBM Plex Sans', system-ui, sans-serif;
   }
@@ -117,7 +119,7 @@
   .hero {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 6rem 2rem 4rem;
+    padding: 6.5rem 2rem 4.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -174,20 +176,30 @@
     text-decoration: none;
   }
 
+  .hero-image {
+    position: relative;
+    border-radius: 10px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(212,168,83,0.46), rgba(42,125,110,0.32), rgba(116,104,214,0.22));
+    box-shadow: 0 18px 70px rgba(0,0,0,0.42);
+  }
+
   .hero-image img {
+    display: block;
     width: 100%;
     border-radius: 8px;
-    opacity: 0.9;
-    mix-blend-mode: lighten;
+    opacity: 1;
+    filter: contrast(1.08) saturate(1.08);
   }
 
   /* Doctrine */
   .doctrine {
-    background: var(--surface);
+    background: var(--surface-strong);
     border-left: 3px solid var(--amber);
     padding: 1.25rem 1.5rem;
     border-radius: 0 4px 4px 0;
     margin-bottom: 2rem;
+    box-shadow: inset 0 0 0 1px rgba(212,168,83,0.08);
   }
 
   .doctrine p {
@@ -263,8 +275,13 @@
   .stack-card {
     background: var(--surface);
     padding: 1.5rem;
+    border-top: 2px solid transparent;
     transition: background 0.15s;
   }
+
+  .stack-card:nth-child(1) { border-top-color: var(--teal); }
+  .stack-card:nth-child(2) { border-top-color: var(--violet); }
+  .stack-card:nth-child(3) { border-top-color: #4da06f; }
 
   .stack-card:hover { background: #1a1a1a; }
 
@@ -294,14 +311,14 @@
   .stack-card-status {
     font-family: var(--mono);
     font-size: 10px;
-    color: var(--teal);
+    color: #64b9a9;
     letter-spacing: 0.05em;
   }
 
   .griha-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-top: 2px solid var(--amber);
+    border-top: 3px solid var(--amber);
     padding: 1.5rem;
     border-radius: 0 0 8px 8px;
     display: grid;
