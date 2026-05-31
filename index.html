@@ -3,9 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>kannanokannan — AI Governance Stack</title>
+<title>kannanokannan - AI Governance Stack</title>
 <meta name="description" content="Open-source AI governance architecture. ContextOps, ContextBoundary, Sthala, Griha. Probabilistic intelligence inside deterministic governance boundaries.">
+<link rel="canonical" href="https://kannanokannan.github.io/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:title" content="kannanokannan - AI Governance Stack">
+<meta property="og:description" content="Open-source AI governance architecture for deterministic boundaries around probabilistic intelligence.">
+<meta property="og:image" content="https://kannanokannan.github.io/hero.png">
+<meta property="og:url" content="https://kannanokannan.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -146,6 +153,27 @@
     margin-bottom: 2rem;
   }
 
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .hero-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--amber);
+    border: 1px solid var(--amber-dim);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .hero-links a:hover {
+    background: rgba(212,168,83,0.08);
+    text-decoration: none;
+  }
+
   .hero-image img {
     width: 100%;
     border-radius: 8px;
@@ -184,6 +212,40 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     margin-bottom: 2rem;
+  }
+
+  /* Overview */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .overview-copy {
+    color: var(--muted);
+    max-width: 62ch;
+  }
+
+  .overview-list {
+    list-style: none;
+    border-top: 1px solid var(--border);
+  }
+
+  .overview-list li {
+    border-bottom: 1px solid var(--border);
+    padding: 0.9rem 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .overview-list strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .overview-grid { grid-template-columns: 1fr; }
   }
 
   /* Stack grid */
@@ -357,9 +419,10 @@
   <div class="nav-brand"><span>kannanokannan</span> / ai-governance-stack</div>
   <ul class="nav-links">
     <li><a href="#stack">Stack</a></li>
+    <li><a href="/repositories.html">Repositories</a></li>
     <li><a href="#architecture">Architecture</a></li>
     <li><a href="#principles">Principles</a></li>
-    <li><a href="https://github.com/kannanokannan" target="_blank" rel="noopener" class="nav-badge">GitHub ↗</a></li>
+    <li><a href="https://github.com/kannanokannan" target="_blank" rel="noopener" class="nav-badge">GitHub</a></li>
   </ul>
 </nav>
 
@@ -367,16 +430,34 @@
   <div class="hero-content">
     <p class="hero-label">The problem</p>
     <h1>Modern AI systems let interpretation, decision-making, and execution share one trust boundary.</h1>
-    <p class="hero-body">That lets probabilistic systems directly own deterministic consequences — the root cause of prompt injection, unsafe automation, context contamination, and authority confusion.</p>
+    <p class="hero-body">That lets probabilistic systems directly own deterministic consequences: the root cause of prompt injection, unsafe automation, context contamination, and authority confusion.</p>
     <div class="doctrine">
       <p>"Probabilistic intelligence must operate inside deterministic governance boundaries."</p>
     </div>
     <p class="hero-body" style="margin-bottom:0">The context-stack separates interpretation from authority: intelligence proposes, governance validates, execution authorizes.</p>
+    <div class="hero-links">
+      <a href="/repositories.html">View repositories</a>
+      <a href="/llms.txt">LLM discovery file</a>
+      <a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">context-stack on GitHub</a>
+    </div>
   </div>
   <div class="hero-image">
     <img src="hero.png" alt="Four-layer governance stack architecture illustration" />
   </div>
 </div>
+
+<section id="overview">
+  <p class="section-label">What this is</p>
+  <div class="overview-grid">
+    <p class="overview-copy">The AI Governance Stack is an open-source architecture for building AI systems where models can reason, interpret, and narrate, but deterministic software remains responsible for validation, policy, execution, logging, and approval. It is designed for teams that want useful AI behavior without giving probabilistic output unchecked authority over real-world consequences.</p>
+    <ul class="overview-list">
+      <li><strong>ContextOps:</strong> governs context lifecycle and operational control.</li>
+      <li><strong>ContextBoundary:</strong> controls where information and authority may cross.</li>
+      <li><strong>Sthala:</strong> defines governed execution spaces.</li>
+      <li><strong>Griha:</strong> composes the architecture into usable systems.</li>
+    </ul>
+  </div>
+</section>
 
 <section id="stack">
   <p class="section-label">The stack</p>
@@ -386,19 +467,19 @@
       <p class="stack-card-label">Governance layer</p>
       <p class="stack-card-name">ContextOps</p>
       <p class="stack-card-q">How does an organisation govern its AI context?</p>
-      <p class="stack-card-status">v0.1 active · <a href="https://github.com/kannanokannan/ContextOps" target="_blank" rel="noopener">GitHub ↗</a></p>
+      <p class="stack-card-status">v0.1 active - <a href="https://github.com/kannanokannan/ContextOps" target="_blank" rel="noopener">GitHub</a></p>
     </div>
     <div class="stack-card">
       <p class="stack-card-label">Egress layer</p>
       <p class="stack-card-name">ContextBoundary</p>
       <p class="stack-card-q">Where is data allowed to go?</p>
-      <p class="stack-card-status">v0.1 active · <a href="https://github.com/kannanokannan/ContextBoundary" target="_blank" rel="noopener">GitHub ↗</a></p>
+      <p class="stack-card-status">v0.1 active - <a href="https://github.com/kannanokannan/ContextBoundary" target="_blank" rel="noopener">GitHub</a></p>
     </div>
     <div class="stack-card">
       <p class="stack-card-label">Execution layer</p>
       <p class="stack-card-name">Sthala</p>
       <p class="stack-card-q">Where does the AI actually run?</p>
-      <p class="stack-card-status">v0.1 Alpha · <a href="https://github.com/kannanokannan/Sthala" target="_blank" rel="noopener">GitHub ↗</a></p>
+      <p class="stack-card-status">v0.1 Alpha - <a href="https://github.com/kannanokannan/Sthala" target="_blank" rel="noopener">GitHub</a></p>
     </div>
   </div>
 
@@ -407,7 +488,7 @@
       <span class="griha-badge">Product layer</span>
       <p class="stack-card-name" style="font-size:1.125rem">Griha</p>
       <p class="stack-card-q">Policy-bounded AI execution for home and edge. Inherits all three governance principles in a working system. The doctrine made real.</p>
-      <p class="stack-card-status">Proof of concept · <a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">GitHub ↗</a></p>
+      <p class="stack-card-status">Proof of concept - <a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">GitHub</a></p>
     </div>
     <div class="griha-invariants">
       LLMs narrate.<br>
@@ -433,7 +514,7 @@
       <!-- Griha -->
       <rect x="190" y="30" width="300" height="64" rx="8" fill="#8a6a30" fill-opacity="0.3" stroke="#d4a853" stroke-width="1"/>
       <text x="340" y="57" text-anchor="middle" dominant-baseline="central" fill="#d4a853" font-family="'IBM Plex Mono',monospace" font-size="13" font-weight="500">Griha</text>
-      <text x="340" y="78" text-anchor="middle" dominant-baseline="central" fill="#8a6a30" font-family="'IBM Plex Mono',monospace" font-size="11">product layer — policy-bounded execution</text>
+      <text x="340" y="78" text-anchor="middle" dominant-baseline="central" fill="#8a6a30" font-family="'IBM Plex Mono',monospace" font-size="11">product layer - policy-bounded execution</text>
 
       <!-- Label: Inherits all three -->
       <text x="108" y="57" text-anchor="middle" dominant-baseline="central" fill="#555" font-family="'IBM Plex Sans',sans-serif" font-size="11">inherits</text>
@@ -476,11 +557,11 @@
 
       <!-- Invariants block -->
       <rect x="40" y="380" width="600" height="62" rx="4" fill="none" stroke="#242424" stroke-width="0.5" stroke-dasharray="4 3"/>
-      <text x="340" y="402" text-anchor="middle" dominant-baseline="central" fill="#444" font-family="'IBM Plex Mono',monospace" font-size="10">LLMs narrate · Code executes · Humans approve · Absence of permission is denial</text>
-      <text x="340" y="422" text-anchor="middle" dominant-baseline="central" fill="#444" font-family="'IBM Plex Mono',monospace" font-size="10">All failure modes deny · State sets risk, not the model · No unlogged actions</text>
+      <text x="340" y="402" text-anchor="middle" dominant-baseline="central" fill="#444" font-family="'IBM Plex Mono',monospace" font-size="10">LLMs narrate - Code executes - Humans approve - Absence of permission is denial</text>
+      <text x="340" y="422" text-anchor="middle" dominant-baseline="central" fill="#444" font-family="'IBM Plex Mono',monospace" font-size="10">All failure modes deny - State sets risk, not the model - No unlogged actions</text>
 
       <!-- Footer -->
-      <text x="340" y="462" text-anchor="middle" dominant-baseline="central" fill="#333" font-family="'IBM Plex Mono',monospace" font-size="10">github.com/kannanokannan · Apache 2.0</text>
+      <text x="340" y="462" text-anchor="middle" dominant-baseline="central" fill="#333" font-family="'IBM Plex Mono',monospace" font-size="10">github.com/kannanokannan - Apache 2.0</text>
     </svg>
   </div>
 </section>
@@ -494,7 +575,7 @@
     </div>
     <div class="principle">
       <p class="principle-title">Operational invariants</p>
-      <p class="principle-text">The narrate/compute split is absolute — no exceptions across any project. Every egress flow is tier-classified before crossing a boundary. Human override always exists for critical domains. No unlogged actions.</p>
+      <p class="principle-text">The narrate/compute split is absolute: no exceptions across any project. Every egress flow is tier-classified before crossing a boundary. Human override always exists for critical domains. No unlogged actions.</p>
     </div>
     <div class="principle">
       <p class="principle-title">Failure philosophy</p>
@@ -502,13 +583,13 @@
     </div>
     <div class="principle">
       <p class="principle-title">What LLMs must not infer</p>
-      <p class="principle-text">Autonomy is not a goal — bounded execution is. Speed does not trump governance. Missing policy means denied. Probabilistic output never carries deterministic authority.</p>
+      <p class="principle-text">Autonomy is not a goal: bounded execution is. Speed does not trump governance. Missing policy means denied. Probabilistic output never carries deterministic authority.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>Apache 2.0 · All four projects open source</p>
+  <p>Apache 2.0 - All projects open source</p>
   <ul class="footer-links">
     <li><a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">context-stack</a></li>
     <li><a href="https://github.com/kannanokannan/ContextOps" target="_blank" rel="noopener">ContextOps</a></li>
