@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kannanokannan — AI Governance Stack</title>
+<meta name="description" content="Open-source AI governance architecture. ContextOps, ContextBoundary, Sthala, Griha. Probabilistic intelligence inside deterministic governance boundaries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --border: #242424;
+    --text: #e2e2e2;
+    --muted: #777;
+    --faint: #333;
+    --amber: #d4a853;
+    --amber-dim: #8a6a30;
+    --teal: #2a7d6e;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+
+  html { font-size: 16px; scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--amber); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-brand span { color: var(--amber); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+  .nav-badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--amber);
+    border: 1px solid var(--amber-dim);
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+
+  /* Hero */
+  .hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+    .hero-image { display: none; }
+  }
+
+  .hero-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-body {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .hero-image img {
+    width: 100%;
+    border-radius: 8px;
+    opacity: 0.9;
+  }
+
+  /* Doctrine */
+  .doctrine {
+    background: var(--surface);
+    border-left: 3px solid var(--amber);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 2rem;
+  }
+
+  .doctrine p {
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    color: var(--amber);
+    line-height: 1.6;
+  }
+
+  /* Section */
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  /* Stack grid */
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1px;
+  }
+
+  .stack-card {
+    background: var(--surface);
+    padding: 1.5rem;
+    transition: background 0.15s;
+  }
+
+  .stack-card:hover { background: #1a1a1a; }
+
+  .stack-card-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .stack-card-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .stack-card-q {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .stack-card-status {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--teal);
+    letter-spacing: 0.05em;
+  }
+
+  .griha-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--amber);
+    padding: 1.5rem;
+    border-radius: 0 0 8px 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    transition: background 0.15s;
+  }
+
+  .griha-card:hover { background: #1a1a1a; }
+
+  .griha-badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--amber);
+    border: 1px solid var(--amber-dim);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .griha-invariants {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  @media (max-width: 768px) {
+    .stack-grid { grid-template-columns: 1fr; }
+    .griha-card { grid-template-columns: 1fr; }
+  }
+
+  /* Diagram */
+  .diagram-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    overflow-x: auto;
+  }
+
+  /* Principles */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .principle {
+    background: var(--surface);
+    padding: 1.5rem;
+  }
+
+  .principle-title {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--amber);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  .principle-text {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .principles-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  footer p {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: var(--amber); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand"><span>kannanokannan</span> / ai-governance-stack</div>
+  <ul class="nav-links">
+    <li><a href="#stack">Stack</a></li>
+    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#principles">Principles</a></li>
+    <li><a href="https://github.com/kannanokannan" target="_blank" rel="noopener" class="nav-badge">GitHub ↗</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <p class="hero-label">The problem</p>
+    <h1>Modern AI systems let interpretation, decision-making, and execution share one trust boundary.</h1>
+    <p class="hero-body">That lets probabilistic systems directly own deterministic consequences — the root cause of prompt injection, unsafe automation, context contamination, and authority confusion.</p>
+    <div class="doctrine">
+      <p>"Probabilistic intelligence must operate inside deterministic governance boundaries."</p>
+    </div>
+    <p class="hero-body" style="margin-bottom:0">The context-stack separates interpretation from authority: intelligence proposes, governance validates, execution authorizes.</p>
+  </div>
+  <div class="hero-image">
+    <img src="hero.png" alt="Four-layer governance stack architecture illustration" />
+  </div>
+</div>
+
+<section id="stack">
+  <p class="section-label">The stack</p>
+
+  <div class="stack-grid">
+    <div class="stack-card">
+      <p class="stack-card-label">Governance layer</p>
+      <p class="stack-card-name">ContextOps</p>
+      <p class="stack-card-q">How does an organisation govern its AI context?</p>
+      <p class="stack-card-status">v0.1 active · <a href="https://github.com/kannanokannan/ContextOps" target="_blank" rel="noopener">GitHub ↗</a></p>
+    </div>
+    <div class="stack-card">
+      <p class="stack-card-label">Egress layer</p>
+      <p class="stack-card-name">ContextBoundary</p>
+      <p class="stack-card-q">Where is data allowed to go?</p>
+      <p class="stack-card-status">v0.1 active · <a href="https://github.com/kannanokannan/ContextBoundary" target="_blank" rel="noopener">GitHub ↗</a></p>
+    </div>
+    <div class="stack-card">
+      <p class="stack-card-label">Execution layer</p>
+      <p class="stack-card-name">Sthala</p>
+      <p class="stack-card-q">Where does the AI actually run?</p>
+      <p class="stack-card-status">v0.1 Alpha · <a href="https://github.com/kannanokannan/Sthala" target="_blank" rel="noopener">GitHub ↗</a></p>
+    </div>
+  </div>
+
+  <div class="griha-card">
+    <div>
+      <span class="griha-badge">Product layer</span>
+      <p class="stack-card-name" style="font-size:1.125rem">Griha</p>
+      <p class="stack-card-q">Policy-bounded AI execution for home and edge. Inherits all three governance principles in a working system. The doctrine made real.</p>
+      <p class="stack-card-status">Proof of concept · <a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">GitHub ↗</a></p>
+    </div>
+    <div class="griha-invariants">
+      LLMs narrate.<br>
+      Code executes.<br>
+      Humans approve.<br>
+      Absence of permission is denial.
+    </div>
+  </div>
+</section>
+
+<section id="architecture">
+  <p class="section-label">Architecture</p>
+  <div class="diagram-wrap">
+    <svg width="100%" viewBox="0 0 680 480" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>Context-stack architecture</title>
+      <desc>Griha as product layer above ContextOps, ContextBoundary, and Sthala governance layers, all grounded in the doctrine.</desc>
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- Griha -->
+      <rect x="190" y="30" width="300" height="64" rx="8" fill="#8a6a30" fill-opacity="0.3" stroke="#d4a853" stroke-width="1"/>
+      <text x="340" y="57" text-anchor="middle" dominant-baseline="central" fill="#d4a853" font-family="'IBM Plex Mono',monospace" font-size="13" font-weight="500">Griha</text>
+      <text x="340" y="78" text-anchor="middle" dominant-baseline="central" fill="#8a6a30" font-family="'IBM Plex Mono',monospace" font-size="11">product layer — policy-bounded execution</text>
+
+      <!-- Label: Inherits all three -->
+      <text x="108" y="57" text-anchor="middle" dominant-baseline="central" fill="#555" font-family="'IBM Plex Sans',sans-serif" font-size="11">inherits</text>
+      <text x="108" y="70" text-anchor="middle" dominant-baseline="central" fill="#555" font-family="'IBM Plex Sans',sans-serif" font-size="11">all three</text>
+      <line x1="142" y1="62" x2="188" y2="62" stroke="#555" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <!-- Arrows down from Griha -->
+      <line x1="265" y1="94" x2="175" y2="145" stroke="#333" stroke-width="0.5" marker-end="url(#arr)"/>
+      <line x1="340" y1="94" x2="340" y2="145" stroke="#333" stroke-width="0.5" marker-end="url(#arr)"/>
+      <line x1="415" y1="94" x2="505" y2="145" stroke="#333" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <!-- ContextOps -->
+      <rect x="40" y="147" width="175" height="60" rx="6" fill="#0f3028" stroke="#2a7d6e" stroke-width="0.5"/>
+      <text x="127" y="171" text-anchor="middle" dominant-baseline="central" fill="#4db8a0" font-family="'IBM Plex Mono',monospace" font-size="12" font-weight="500">ContextOps</text>
+      <text x="127" y="190" text-anchor="middle" dominant-baseline="central" fill="#2a7d6e" font-family="'IBM Plex Mono',monospace" font-size="10">governance layer</text>
+
+      <!-- ContextBoundary -->
+      <rect x="252" y="147" width="176" height="60" rx="6" fill="#1a1440" stroke="#534AB7" stroke-width="0.5"/>
+      <text x="340" y="171" text-anchor="middle" dominant-baseline="central" fill="#AFA9EC" font-family="'IBM Plex Mono',monospace" font-size="12" font-weight="500">ContextBoundary</text>
+      <text x="340" y="190" text-anchor="middle" dominant-baseline="central" fill="#534AB7" font-family="'IBM Plex Mono',monospace" font-size="10">egress layer</text>
+
+      <!-- Sthala -->
+      <rect x="465" y="147" width="175" height="60" rx="6" fill="#0f3028" stroke="#2a7d6e" stroke-width="0.5"/>
+      <text x="552" y="171" text-anchor="middle" dominant-baseline="central" fill="#4db8a0" font-family="'IBM Plex Mono',monospace" font-size="12" font-weight="500">Sthala</text>
+      <text x="552" y="190" text-anchor="middle" dominant-baseline="central" fill="#2a7d6e" font-family="'IBM Plex Mono',monospace" font-size="10">execution layer</text>
+
+      <!-- Converging lines -->
+      <line x1="127" y1="207" x2="127" y2="265" stroke="#242424" stroke-width="0.5"/>
+      <line x1="340" y1="207" x2="340" y2="265" stroke="#242424" stroke-width="0.5"/>
+      <line x1="552" y1="207" x2="552" y2="265" stroke="#242424" stroke-width="0.5"/>
+      <line x1="127" y1="265" x2="552" y2="265" stroke="#242424" stroke-width="0.5"/>
+      <line x1="340" y1="265" x2="340" y2="295" stroke="#555" stroke-width="0.5" marker-end="url(#arr)"/>
+
+      <!-- Doctrine block -->
+      <rect x="90" y="297" width="500" height="52" rx="6" fill="#141414" stroke="#333" stroke-width="0.5"/>
+      <text x="340" y="317" text-anchor="middle" dominant-baseline="central" fill="#555" font-family="'IBM Plex Mono',monospace" font-size="10">doctrine</text>
+      <text x="340" y="335" text-anchor="middle" dominant-baseline="central" fill="#d4a853" font-family="'IBM Plex Mono',monospace" font-size="11">Probabilistic intelligence inside deterministic governance boundaries</text>
+
+      <line x1="340" y1="349" x2="340" y2="378" stroke="#242424" stroke-width="0.5"/>
+
+      <!-- Invariants block -->
+      <rect x="40" y="380" width="600" height="62" rx="4" fill="none" stroke="#242424" stroke-width="0.5" stroke-dasharray="4 3"/>
+      <text x="340" y="402" text-anchor="middle" dominant-baseline="central" fill="#444" font-family="'IBM Plex Mono',monospace" font-size="10">LLMs narrate · Code executes · Humans approve · Absence of permission is denial</text>
+      <text x="340" y="422" text-anchor="middle" dominant-baseline="central" fill="#444" font-family="'IBM Plex Mono',monospace" font-size="10">All failure modes deny · State sets risk, not the model · No unlogged actions</text>
+
+      <!-- Footer -->
+      <text x="340" y="462" text-anchor="middle" dominant-baseline="central" fill="#333" font-family="'IBM Plex Mono',monospace" font-size="10">github.com/kannanokannan · Apache 2.0</text>
+    </svg>
+  </div>
+</section>
+
+<section id="principles">
+  <p class="section-label">Governance principles</p>
+  <div class="principles-grid">
+    <div class="principle">
+      <p class="principle-title">Authority boundaries</p>
+      <p class="principle-text">LLMs may interpret intent and narrate results. LLMs may not directly authorize irreversible side effects, own computation outcomes, bypass deterministic validation, or infer trust beyond what is explicitly declared.</p>
+    </div>
+    <div class="principle">
+      <p class="principle-title">Operational invariants</p>
+      <p class="principle-text">The narrate/compute split is absolute — no exceptions across any project. Every egress flow is tier-classified before crossing a boundary. Human override always exists for critical domains. No unlogged actions.</p>
+    </div>
+    <div class="principle">
+      <p class="principle-title">Failure philosophy</p>
+      <p class="principle-text">This stack assumes LLMs will misinterpret, hallucinate, and exceed their authority if unconstrained. The architecture is designed for that assumption, not against it. Safety comes from deterministic boundaries, not model quality.</p>
+    </div>
+    <div class="principle">
+      <p class="principle-title">What LLMs must not infer</p>
+      <p class="principle-text">Autonomy is not a goal — bounded execution is. Speed does not trump governance. Missing policy means denied. Probabilistic output never carries deterministic authority.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Apache 2.0 · All four projects open source</p>
+  <ul class="footer-links">
+    <li><a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">context-stack</a></li>
+    <li><a href="https://github.com/kannanokannan/ContextOps" target="_blank" rel="noopener">ContextOps</a></li>
+    <li><a href="https://github.com/kannanokannan/ContextBoundary" target="_blank" rel="noopener">ContextBoundary</a></li>
+    <li><a href="https://github.com/kannanokannan/Sthala" target="_blank" rel="noopener">Sthala</a></li>
+    <li><a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">Griha</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
