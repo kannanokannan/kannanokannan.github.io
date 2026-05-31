@@ -5,6 +5,7 @@ Open-source AI governance architecture for placing probabilistic intelligence in
 ## Website
 
 - AI Governance Stack landing page: https://kannanokannan.github.io/
+- Repository map: https://kannanokannan.github.io/repositories.html
 
 ## Core Repositories
 
