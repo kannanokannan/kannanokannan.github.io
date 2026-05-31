@@ -3,8 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Repositories — kannanokannan AI Governance Stack</title>
-<meta name="description" content="Repository map for the kannanokannan AI Governance Stack: ContextOps, ContextBoundary, Sthala, Griha, and context-stack.">
+<title>Repositories - kannanokannan AI Governance Stack</title>
+<meta name="description" content="Canonical repository map for the kannanokannan AI Governance Stack: ContextOps, ContextBoundary, Sthala, Griha, and context-stack.">
+<meta property="og:title" content="Repositories - kannanokannan AI Governance Stack">
+<meta property="og:description" content="Repository map for an open-source AI governance stack focused on deterministic boundaries around probabilistic intelligence.">
+<meta property="og:url" content="https://kannanokannan.github.io/repositories.html">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "kannanokannan AI Governance Stack Repositories",
+  "description": "Canonical repository map for the kannanokannan open-source AI governance stack.",
+  "url": "https://kannanokannan.github.io/repositories.html",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "SoftwareSourceCode",
+        "position": 1,
+        "name": "ContextOps",
+        "url": "https://github.com/kannanokannan/ContextOps",
+        "description": "Operational layer for managing context flow, context lifecycle, and production control around AI systems."
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "position": 2,
+        "name": "ContextBoundary",
+        "url": "https://github.com/kannanokannan/ContextBoundary",
+        "description": "Boundary layer for defining deterministic constraints around probabilistic model behavior."
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "position": 3,
+        "name": "Sthala",
+        "url": "https://github.com/kannanokannan/Sthala",
+        "description": "Structural layer for organizing governed AI execution spaces and their relationships."
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "position": 4,
+        "name": "Griha",
+        "url": "https://github.com/kannanokannan/Griha",
+        "description": "Application layer for composing governed AI capabilities into usable systems."
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "position": 5,
+        "name": "context-stack",
+        "url": "https://github.com/kannanokannan/context-stack",
+        "description": "Integration repository that ties the governance components into a coherent stack."
+      }
+    ]
+  }
+}
+</script>
 <style>
   body {
     margin: 0;
@@ -15,77 +68,130 @@
   }
 
   main {
-    max-width: 760px;
+    max-width: 880px;
     margin: 0 auto;
     padding: 56px 24px;
   }
 
+  nav {
+    margin-bottom: 36px;
+  }
+
+  nav a {
+    color: #d4a853;
+    font-size: 14px;
+  }
+
   h1 {
     margin: 0 0 16px;
-    font-size: 32px;
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  h2 {
+    margin: 44px 0 14px;
+    font-size: 20px;
     font-weight: 500;
   }
 
   p {
     color: #aaa;
-    margin: 0 0 28px;
+    margin: 0 0 22px;
   }
 
-  ul {
+  .lead {
+    font-size: 18px;
+    color: #c6c6c6;
+  }
+
+  .repo-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 28px 0 0;
   }
 
-  li {
+  .repo {
     border-top: 1px solid #242424;
-    padding: 18px 0;
+    padding: 24px 0;
   }
 
-  a {
+  .repo a {
     color: #d4a853;
-    font-size: 18px;
+    font-size: 21px;
     text-decoration: none;
   }
 
-  a:hover {
+  .repo a:hover {
     text-decoration: underline;
   }
 
   .summary {
-    color: #777;
+    color: #c4c4c4;
     display: block;
-    margin-top: 4px;
+    margin-top: 8px;
+  }
+
+  .details {
+    color: #858585;
+    margin-top: 8px;
+  }
+
+  .machine-readable {
+    border-top: 1px solid #242424;
+    border-bottom: 1px solid #242424;
+    padding: 20px 0;
+    color: #aaa;
+  }
+
+  code {
+    color: #d4a853;
+    font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+    font-size: 0.95em;
   }
 </style>
 </head>
 <body>
 <main>
-  <h1>AI Governance Stack Repositories</h1>
-  <p>Canonical repository map for the kannanokannan open-source AI governance stack.</p>
+  <nav>
+    <a href="/">Back to AI Governance Stack</a>
+  </nav>
 
-  <ul>
-    <li>
+  <h1>AI Governance Stack Repositories</h1>
+  <p class="lead">Canonical repository map for the kannanokannan open-source AI governance stack.</p>
+  <p>The stack is organized around a simple premise: probabilistic intelligence becomes production-ready only when it is placed inside deterministic governance boundaries, explicit context handling, and operational controls.</p>
+
+  <h2>Core Repositories</h2>
+  <ul class="repo-list">
+    <li class="repo">
       <a href="https://github.com/kannanokannan/ContextOps">ContextOps</a>
-      <span class="summary">Operational patterns for managing context in AI systems.</span>
+      <span class="summary">Operational layer for context-aware AI systems.</span>
+      <p class="details">ContextOps focuses on the practical management of context in production: context flow, context lifecycle, operational handoffs, and the controls needed to make model behavior observable and governable.</p>
     </li>
-    <li>
+    <li class="repo">
       <a href="https://github.com/kannanokannan/ContextBoundary">ContextBoundary</a>
-      <span class="summary">Governance boundaries for probabilistic AI behavior.</span>
+      <span class="summary">Deterministic boundary layer around probabilistic AI behavior.</span>
+      <p class="details">ContextBoundary defines the constraints, checks, and governance interfaces that keep AI behavior inside explicit limits. It is the guardrail layer for systems where model output must remain accountable.</p>
     </li>
-    <li>
+    <li class="repo">
       <a href="https://github.com/kannanokannan/Sthala">Sthala</a>
-      <span class="summary">Spatial and structural layer of the governance stack.</span>
+      <span class="summary">Structural layer for governed AI execution spaces.</span>
+      <p class="details">Sthala represents the place or structure in which governed AI activity occurs. It frames how components, contexts, and boundaries relate to each other inside an AI governance architecture.</p>
     </li>
-    <li>
+    <li class="repo">
       <a href="https://github.com/kannanokannan/Griha">Griha</a>
-      <span class="summary">Application/home layer for governed AI systems.</span>
+      <span class="summary">Application layer for usable governed AI systems.</span>
+      <p class="details">Griha is the layer where governed AI capabilities become usable products or workflows. It connects the underlying governance architecture to practical user-facing systems.</p>
     </li>
-    <li>
+    <li class="repo">
       <a href="https://github.com/kannanokannan/context-stack">context-stack</a>
-      <span class="summary">Integrated stack repository tying the governance components together.</span>
+      <span class="summary">Integrated stack tying the governance components together.</span>
+      <p class="details">context-stack acts as the integration point for the broader architecture. It connects ContextOps, ContextBoundary, Sthala, and Griha into a coherent stack for context-governed AI systems.</p>
     </li>
   </ul>
+
+  <h2>Machine-Readable Discovery</h2>
+  <p class="machine-readable">For crawlers and LLM systems, the canonical discovery file is <code>https://kannanokannan.github.io/llms.txt</code>. Search engines can use <code>https://kannanokannan.github.io/sitemap.xml</code>.</p>
 </main>
 </body>
 </html>

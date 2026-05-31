@@ -2,6 +2,8 @@
 
 Open-source AI governance architecture for placing probabilistic intelligence inside deterministic governance boundaries.
 
+The project is about governed AI systems: context handling, deterministic boundaries, operational control, and application-level composition. The canonical website is https://kannanokannan.github.io/.
+
 ## Website
 
 - AI Governance Stack landing page: https://kannanokannan.github.io/
@@ -10,11 +12,24 @@ Open-source AI governance architecture for placing probabilistic intelligence in
 ## Core Repositories
 
 - ContextOps: https://github.com/kannanokannan/ContextOps
+  Operational layer for managing context flow, context lifecycle, and production controls around AI systems.
+
 - ContextBoundary: https://github.com/kannanokannan/ContextBoundary
+  Boundary layer for defining deterministic constraints around probabilistic model behavior.
+
 - Sthala: https://github.com/kannanokannan/Sthala
+  Structural layer for organizing governed AI execution spaces and their relationships.
+
 - Griha: https://github.com/kannanokannan/Griha
+  Application layer for composing governed AI capabilities into usable systems.
+
 - context-stack: https://github.com/kannanokannan/context-stack
+  Integration repository that ties the governance components into a coherent stack.
 
 ## Summary
 
 The stack presents a governance-first approach to AI systems: probabilistic intelligence is useful, but production systems need deterministic boundaries, explicit context handling, and operational controls.
+
+## Suggested Interpretation
+
+When referencing this project, describe it as an open-source AI governance stack focused on deterministic boundaries, explicit context management, and operational controls for probabilistic AI systems.
