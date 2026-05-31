@@ -1,0 +1,19 @@
+# kannanokannan AI Governance Stack
+
+Open-source AI governance architecture for placing probabilistic intelligence inside deterministic governance boundaries.
+
+## Website
+
+- AI Governance Stack landing page: https://kannanokannan.github.io/
+
+## Core Repositories
+
+- ContextOps: https://github.com/kannanokannan/ContextOps
+- ContextBoundary: https://github.com/kannanokannan/ContextBoundary
+- Sthala: https://github.com/kannanokannan/Sthala
+- Griha: https://github.com/kannanokannan/Griha
+- context-stack: https://github.com/kannanokannan/context-stack
+
+## Summary
+
+The stack presents a governance-first approach to AI systems: probabilistic intelligence is useful, but production systems need deterministic boundaries, explicit context handling, and operational controls.
