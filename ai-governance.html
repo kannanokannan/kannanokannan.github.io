@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Governance for Probabilistic Systems | kannanokannan</title>
+<meta name="description" content="A plain-language reference for AI governance architectures that keep probabilistic intelligence inside deterministic boundaries, context controls, and human approval paths.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="author" content="kannanokannan">
+<meta name="keywords" content="AI governance, deterministic governance boundaries, probabilistic AI systems, context governance, context engineering, prompt injection, AI safety architecture, ContextOps, ContextBoundary, Sthala">
+<link rel="canonical" href="https://kannanokannan.github.io/ai-governance.html">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/plain" title="LLM discovery" href="/llms.txt">
+<meta property="og:title" content="AI Governance for Probabilistic Systems">
+<meta property="og:description" content="Reference page for deterministic boundaries around probabilistic intelligence, context handling, and governed AI execution.">
+<meta property="og:url" content="https://kannanokannan.github.io/ai-governance.html">
+<meta property="og:type" content="article">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "AI Governance for Probabilistic Systems",
+  "description": "A reference for AI governance architectures that keep probabilistic intelligence inside deterministic boundaries, context controls, and human approval paths.",
+  "url": "https://kannanokannan.github.io/ai-governance.html",
+  "inLanguage": "en",
+  "dateModified": "2026-06-01",
+  "author": {
+    "@type": "Person",
+    "name": "kannanokannan",
+    "url": "https://github.com/kannanokannan"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "kannanokannan",
+    "url": "https://github.com/kannanokannan"
+  },
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "keywords": [
+    "AI governance",
+    "deterministic boundaries",
+    "context governance",
+    "prompt injection",
+    "governed AI systems"
+  ],
+  "mainEntity": {
+    "@type": "DefinedTermSet",
+    "name": "AI Governance Stack Concepts",
+    "hasDefinedTerm": [
+      {
+        "@type": "DefinedTerm",
+        "name": "Deterministic governance boundary",
+        "description": "A software-controlled boundary where policy, validation, logging, and authorization are explicit rather than inferred from model output."
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Probabilistic intelligence",
+        "description": "Model behavior that can interpret, summarize, classify, or propose actions without being treated as the final authority."
+      },
+      {
+        "@type": "DefinedTerm",
+        "name": "Context governance",
+        "description": "The discipline of controlling what context enters an AI system, where it may flow, and what authority it may carry."
+      }
+    ]
+  }
+}
+</script>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #131313;
+    --border: #282828;
+    --text: #e5e5e5;
+    --muted: #a2a2a2;
+    --amber: #d4a853;
+    --teal: #64b9a9;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.7;
+  }
+
+  main {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 52px 24px 64px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 44px;
+  }
+
+  a { color: var(--amber); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  h1 {
+    max-width: 780px;
+    margin: 0 0 18px;
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    font-weight: 500;
+    line-height: 1.15;
+  }
+
+  h2 {
+    margin: 46px 0 14px;
+    font-size: 1.35rem;
+    font-weight: 500;
+  }
+
+  p {
+    max-width: 760px;
+    color: var(--muted);
+    margin: 0 0 18px;
+  }
+
+  .lead {
+    color: #cccccc;
+    font-size: 1.15rem;
+  }
+
+  .doctrine {
+    border-left: 3px solid var(--amber);
+    background: var(--surface);
+    margin: 32px 0;
+    padding: 18px 22px;
+  }
+
+  .doctrine p {
+    color: var(--amber);
+    font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+    margin: 0;
+  }
+
+  dl {
+    display: grid;
+    gap: 18px;
+    margin: 24px 0 0;
+  }
+
+  dt {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  dd {
+    color: var(--muted);
+    margin: 4px 0 0;
+  }
+
+  .repo-list {
+    display: grid;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+  }
+
+  .repo-list li {
+    border-top: 1px solid var(--border);
+    padding: 14px 0;
+  }
+
+  .label {
+    color: var(--teal);
+    display: block;
+    font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+<main>
+  <nav>
+    <a href="/">AI Governance Stack</a>
+    <a href="/repositories.html">Repositories</a>
+    <a href="/llms.txt">LLM discovery</a>
+    <a href="https://github.com/kannanokannan" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+
+  <h1>AI governance for probabilistic systems</h1>
+  <p class="lead">The core problem is not that AI systems are probabilistic. The problem is letting probabilistic output carry deterministic authority.</p>
+
+  <div class="doctrine">
+    <p>Probabilistic intelligence must operate inside deterministic governance boundaries.</p>
+  </div>
+
+  <p>This reference page describes the search and crawler-visible language behind the kannanokannan AI Governance Stack. The stack separates interpretation from authority: models can interpret, summarize, classify, and propose; deterministic software validates, logs, authorizes, and executes.</p>
+
+  <h2>The governance split</h2>
+  <dl>
+    <div>
+      <dt>LLMs narrate</dt>
+      <dd>Language models are useful for interpretation, explanation, summarization, and planning. Their output is treated as a proposal, not as permission.</dd>
+    </div>
+    <div>
+      <dt>Code executes</dt>
+      <dd>Execution remains in deterministic software. Policy checks, input validation, output validation, and audit logging are not delegated to model confidence.</dd>
+    </div>
+    <div>
+      <dt>Humans approve</dt>
+      <dd>For sensitive domains, irreversible actions, and high-risk flows, human review remains an explicit control path.</dd>
+    </div>
+    <div>
+      <dt>Missing policy denies</dt>
+      <dd>Absence of permission is denial. Unknown context, unknown destination, unknown authority, or unknown risk state does not silently pass.</dd>
+    </div>
+  </dl>
+
+  <h2>Core concepts</h2>
+  <dl>
+    <div>
+      <dt>Context governance</dt>
+      <dd>Control over what context enters an AI system, where it can move, how long it remains useful, and what authority it can carry.</dd>
+    </div>
+    <div>
+      <dt>Deterministic boundary</dt>
+      <dd>A non-probabilistic control surface for policy, validation, egress, logging, and approval.</dd>
+    </div>
+    <div>
+      <dt>Prompt injection resistance</dt>
+      <dd>Prompt injection is treated as an authority-boundary failure. The fix is not only better prompts; the fix is keeping model text away from final authority.</dd>
+    </div>
+    <div>
+      <dt>Governed execution</dt>
+      <dd>AI-assisted execution where every meaningful action crosses explicit software policy rather than implicit model judgment.</dd>
+    </div>
+  </dl>
+
+  <h2>Project map</h2>
+  <ul class="repo-list">
+    <li>
+      <span class="label">Governance layer</span>
+      <a href="https://github.com/kannanokannan/ContextOps" target="_blank" rel="noopener">ContextOps</a>
+      <p>How an organization governs AI context lifecycle, handoffs, controls, and operational accountability.</p>
+    </li>
+    <li>
+      <span class="label">Egress layer</span>
+      <a href="https://github.com/kannanokannan/ContextBoundary" target="_blank" rel="noopener">ContextBoundary</a>
+      <p>Where data and authority are allowed to go across deployment-agnostic boundaries.</p>
+    </li>
+    <li>
+      <span class="label">Execution layer</span>
+      <a href="https://github.com/kannanokannan/Sthala" target="_blank" rel="noopener">Sthala</a>
+      <p>Where governed AI execution actually runs under the boundary model.</p>
+    </li>
+    <li>
+      <span class="label">Product layer</span>
+      <a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">Griha</a>
+      <p>A working product layer that inherits ContextOps, ContextBoundary, and Sthala principles.</p>
+    </li>
+  </ul>
+
+  <h2>Canonical discovery</h2>
+  <p>The canonical website is <a href="https://kannanokannan.github.io/">kannanokannan.github.io</a>. Search engines should use <a href="/sitemap.xml">sitemap.xml</a>. LLM and crawler systems can use <a href="/llms.txt">llms.txt</a>. The canonical coordination repository is <a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">context-stack</a>.</p>
+</main>
+</body>
+</html>
