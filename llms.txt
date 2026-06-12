@@ -1,4 +1,4 @@
-# kannanokannan AI Governance Stack
+# Context Stack
 
 Open-source AI governance architecture for placing probabilistic intelligence inside deterministic governance boundaries.
 
@@ -26,6 +26,9 @@ The project is about governed AI systems: context governance, deployment-agnosti
 
 - context-stack: https://github.com/kannanokannan/context-stack
   Canonical coordination repository for locked terminology, cross-project decisions, and family framing.
+
+- context-stack-mcp: https://github.com/kannanokannan/context-stack-mcp
+  Read-only MCP endpoint for machine access to stack resources, prompts, and guidance tools.
 
 ## Summary
 

@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Repositories - kannanokannan AI Governance Stack</title>
-<meta name="description" content="Canonical repository map for the kannanokannan AI Governance Stack: ContextOps, ContextBoundary, Sthala, Griha, and context-stack.">
+<title>Repositories | Context Stack</title>
+<meta name="description" content="Canonical repository map for Context Stack: ContextOps, ContextBoundary, Sthala, Griha, and context-stack.">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <meta name="keywords" content="ContextOps, ContextBoundary, Egress Tier, MCP governance, Sthala, Griha, context-stack, AI governance repositories, open-source AI governance, deterministic AI boundaries">
 <link rel="canonical" href="https://context-stack.org/repositories.html">
 <link rel="alternate" type="text/plain" title="LLM discovery" href="/llms.txt">
-<meta property="og:title" content="Repositories - kannanokannan AI Governance Stack">
+<meta property="og:title" content="Repositories | Context Stack">
 <meta property="og:description" content="Repository map for an open-source AI governance stack covering context governance, egress boundaries, governed execution, and product composition.">
 <meta property="og:url" content="https://context-stack.org/repositories.html">
 <meta property="og:type" content="website">
@@ -17,8 +17,8 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "kannanokannan AI Governance Stack Repositories",
-  "description": "Canonical repository map for the kannanokannan open-source AI governance stack.",
+  "name": "Context Stack Repositories",
+  "description": "Canonical repository map for the open-source Context Stack.",
   "url": "https://context-stack.org/repositories.html",
   "mainEntity": {
     "@type": "ItemList",
@@ -57,6 +57,13 @@
         "name": "context-stack",
         "url": "https://github.com/kannanokannan/context-stack",
         "description": "Integration repository that ties the governance components into a coherent stack."
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "position": 6,
+        "name": "context-stack-mcp",
+        "url": "https://github.com/kannanokannan/context-stack-mcp",
+        "description": "Read-only MCP endpoint for machine access to Context Stack resources, prompts, and guidance tools."
       }
     ]
   }
@@ -163,7 +170,7 @@
   </nav>
 
   <h1>AI Governance Stack Repositories</h1>
-  <p class="lead">Canonical repository map for the kannanokannan open-source AI governance stack.</p>
+  <p class="lead">Canonical repository map for the open-source Context Stack.</p>
   <p>The stack is organized around a simple premise: probabilistic intelligence becomes production-ready only when it is placed inside deterministic governance boundaries, explicit context handling, and operational controls.</p>
 
   <h2>Core Repositories</h2>
@@ -193,10 +200,15 @@
       <span class="summary">Integrated stack tying the governance components together.</span>
       <p class="details">context-stack is the canonical coordination layer for locked terminology, cross-project decisions, and family framing across ContextOps, ContextBoundary, Sthala, and Griha.</p>
     </li>
+    <li class="repo">
+      <a href="https://github.com/kannanokannan/context-stack-mcp">context-stack-mcp</a>
+      <span class="summary">Machine interface for the stack.</span>
+      <p class="details">context-stack-mcp exposes read-only MCP resources, prompts, and guidance tools so AI clients can discover the stack and route users to the correct framework layer.</p>
+    </li>
   </ul>
 
   <h2>Machine-Readable Discovery</h2>
-  <p class="machine-readable">For crawlers and LLM systems, the canonical discovery file is <code>https://context-stack.org/llms.txt</code>. Search engines can use <code>https://context-stack.org/sitemap.xml</code>.</p>
+  <p class="machine-readable">For crawlers, LLM systems, and MCP clients, the canonical discovery file is <code>https://context-stack.org/llms.txt</code>. Search engines can use <code>https://context-stack.org/sitemap.xml</code>.</p>
   <p class="machine-readable">For a plain-language explanation of the architecture, use <code>https://context-stack.org/ai-governance.html</code>.</p>
 </main>
 </body>
