@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Context Stack | Open-Source AI Governance</title>
-<meta name="description" content="Open-source AI governance architecture. ContextOps, ContextBoundary, Sthala, Griha. Context governance, egress boundaries, and governed execution for probabilistic intelligence.">
+<title>Context Stack | Open-Source AI Governance Framework</title>
+<meta name="description" content="Context Stack is an open-source AI governance framework for context ownership, data egress, runtime placement, and governed delivery. Start with the guided assessment or use the framework through MCP.">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <meta name="author" content="Context Stack Project">
-<meta name="keywords" content="AI governance, deterministic AI boundaries, Egress Tier, MCP governance, probabilistic intelligence, context governance, context engineering, prompt injection, AI safety architecture, ContextOps, ContextBoundary, Sthala, Griha">
+<meta name="keywords" content="AI governance framework, Context Stack, ContextOps, ContextBoundary, Sthala, Griha, MCP governance, context governance, egress governance, deterministic AI boundaries">
 <link rel="canonical" href="https://context-stack.org/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="text/plain" title="LLM discovery" href="/llms.txt">
-<meta property="og:title" content="Context Stack | Open-Source AI Governance">
-<meta property="og:description" content="Open-source AI governance architecture for context governance, egress boundaries, and governed execution around probabilistic intelligence.">
+<meta property="og:title" content="Context Stack | Open-Source AI Governance Framework">
+<meta property="og:description" content="Open-source framework for governing AI context, data egress, runtime placement, and delivery workflows.">
 <meta property="og:image" content="https://context-stack.org/hero.png">
 <meta property="og:url" content="https://context-stack.org/">
 <meta property="og:type" content="website">
@@ -22,7 +22,7 @@
   "@context": "https://schema.org",
   "@type": "SoftwareSourceCode",
   "name": "Context Stack",
-  "description": "Open-source AI governance architecture for context governance, egress boundaries, and governed execution around probabilistic intelligence.",
+  "description": "Open-source AI governance framework for context ownership, data egress, runtime placement, and governed delivery.",
   "url": "https://context-stack.org/",
   "codeRepository": [
     "https://github.com/kannanokannan/ContextOps",
@@ -32,788 +32,363 @@
     "https://github.com/kannanokannan/context-stack",
     "https://github.com/kannanokannan/context-stack-mcp"
   ],
-  "programmingLanguage": "HTML",
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
-  "keywords": "AI governance, deterministic boundaries, context governance, Egress Tier, MCP governance, governed AI systems, prompt injection, operational AI control"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Context Stack",
-  "url": "https://context-stack.org/",
-  "description": "Open-source AI governance architecture for context governance, egress boundaries, and governed execution around probabilistic intelligence.",
-  "inLanguage": "en",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Context Stack Project",
-    "url": "https://context-stack.org/"
-  },
-  "about": [
-    "AI governance",
-    "deterministic governance boundaries",
-    "context governance",
-    "prompt injection",
-    "governed AI systems"
-  ]
+  "keywords": "AI governance, deterministic boundaries, context governance, egress governance, MCP governance, governed AI systems"
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --bg: #0a0a0a;
-    --surface: #131313;
-    --surface-strong: #181818;
-    --border: #303030;
-    --text: #e2e2e2;
-    --muted: #9a9a9a;
-    --faint: #4a4a4a;
-    --amber: #d4a853;
-    --amber-dim: #8a6a30;
-    --teal: #2a7d6e;
-    --violet: #7468d6;
-    --mono: 'IBM Plex Mono', monospace;
-    --sans: 'IBM Plex Sans', system-ui, sans-serif;
-  }
-
-  html { font-size: 16px; scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-weight: 300;
-    line-height: 1.7;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  a { color: var(--amber); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  /* Nav */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    background: rgba(10,10,10,0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2rem;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .nav-brand {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--muted);
-    letter-spacing: 0.02em;
-  }
-
-  .nav-brand span { color: var(--amber); }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    list-style: none;
-    min-width: 0;
-  }
-
-  .nav-links a {
-    font-size: 13px;
-    color: var(--muted);
-    transition: color 0.15s;
-  }
-
-  .nav-links a:hover { color: var(--text); text-decoration: none; }
-
-  .nav-badge {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--amber);
-    border: 1px solid var(--amber-dim);
-    padding: 2px 8px;
-    border-radius: 3px;
-  }
-
-  @media (max-width: 900px) {
-    nav {
-      height: auto;
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 0.75rem;
-      padding: 0.75rem 1.5rem;
-    }
-
-    .nav-links {
-      width: 100%;
-      flex-direction: column;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-  }
-
-  /* Hero */
-  .hero {
-    width: min(100%, 1100px);
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 6.5rem 2rem 4.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .hero-content,
-  .hero-image,
-  .overview-grid > *,
-  .path-card,
-  .stack-card,
-  .griha-card > *,
-  .principle {
-    min-width: 0;
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      width: 100%;
-      max-width: 100%;
-      grid-template-columns: 1fr;
-      padding: 3rem 1.5rem;
-    }
-    .hero-image { display: none; }
-    .hero-links { flex-direction: column; align-items: flex-start; }
-    .hero-content,
-    .hero-body,
-    .doctrine {
-      width: calc(100vw - 3rem);
-      max-width: calc(100vw - 3rem);
-    }
-  }
-
-  .hero-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--amber);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    font-weight: 400;
-    line-height: 1.25;
-    color: var(--text);
-    margin-bottom: 1.5rem;
-    overflow-wrap: break-word;
-  }
-
-  .hero-body {
-    font-size: 1rem;
-    color: var(--muted);
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    overflow-wrap: break-word;
-  }
-
-  .hero-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .hero-links a {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--amber);
-    border: 1px solid var(--amber-dim);
-    border-radius: 4px;
-    padding: 0.5rem 0.75rem;
-    overflow-wrap: break-word;
-  }
-
-  .hero-links a:hover {
-    background: rgba(212,168,83,0.08);
-    text-decoration: none;
-  }
-
-  .hero-image {
-    position: relative;
-    border-radius: 10px;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(212,168,83,0.46), rgba(42,125,110,0.32), rgba(116,104,214,0.22));
-    box-shadow: 0 18px 70px rgba(0,0,0,0.42);
-  }
-
-  .hero-image img {
-    display: block;
-    width: 100%;
-    border-radius: 8px;
-    opacity: 1;
-    filter: contrast(1.08) saturate(1.08);
-  }
-
-  /* Doctrine */
-  .doctrine {
-    background: var(--surface-strong);
-    border-left: 3px solid var(--amber);
-    padding: 1.25rem 1.5rem;
-    border-radius: 0 4px 4px 0;
-    margin-bottom: 2rem;
-    box-shadow: inset 0 0 0 1px rgba(212,168,83,0.08);
-    max-width: 100%;
-  }
-
-  .doctrine p {
-    font-family: var(--mono);
-    font-size: 0.875rem;
-    color: var(--amber);
-    line-height: 1.6;
-    overflow-wrap: break-word;
-  }
-
-  /* Section */
-  section {
-    width: min(100%, 1100px);
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .section-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-  }
-
-  /* Overview */
-  .overview-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 3rem;
-    align-items: start;
-  }
-
-  .overview-copy {
-    color: var(--muted);
-    max-width: 62ch;
-    overflow-wrap: break-word;
-  }
-
-  .overview-list {
-    list-style: none;
-    border-top: 1px solid var(--border);
-  }
-
-  .overview-list li {
-    border-bottom: 1px solid var(--border);
-    padding: 0.9rem 0;
-    color: var(--muted);
-    font-size: 0.9rem;
-    overflow-wrap: break-word;
-  }
-
-  .overview-list strong {
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  @media (max-width: 768px) {
-    section {
-      width: 100%;
-      max-width: 100%;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
-
-    .overview-grid { grid-template-columns: 1fr; }
-
-    .overview-copy,
-    .overview-list {
-      width: calc(100vw - 3rem);
-      max-width: calc(100vw - 3rem);
-    }
-  }
-
-  /* Use paths */
-  .path-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .path-card {
-    background: var(--surface);
-    padding: 1.25rem;
-  }
-
-  .path-title {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--amber);
-    margin-bottom: 0.75rem;
-  }
-
-  .path-text {
-    font-size: 0.875rem;
-    color: var(--muted);
-    line-height: 1.65;
-  }
-
-  @media (max-width: 900px) {
-    .path-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 560px) {
-    .path-grid { grid-template-columns: 1fr; }
-  }
-
-  /* Stack grid */
-  .stack-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 1px;
-  }
-
-  .stack-card {
-    background: var(--surface);
-    padding: 1.5rem;
-    border-top: 2px solid transparent;
-    transition: background 0.15s;
-  }
-
-  .stack-card:nth-child(1) { border-top-color: var(--teal); }
-  .stack-card:nth-child(2) { border-top-color: var(--violet); }
-  .stack-card:nth-child(3) { border-top-color: #4da06f; }
-
-  .stack-card:hover { background: #1a1a1a; }
-
-  .stack-card-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-
-  .stack-card-name {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-  }
-
-  .stack-card-q {
-    font-size: 0.875rem;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-  }
-
-  .stack-card-status {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: #64b9a9;
-    letter-spacing: 0.05em;
-  }
-
-  .griha-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--amber);
-    padding: 1.5rem;
-    border-radius: 0 0 8px 8px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: center;
-    transition: background 0.15s;
-  }
-
-  .griha-card:hover { background: #1a1a1a; }
-
-  .griha-badge {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--amber);
-    border: 1px solid var(--amber-dim);
-    display: inline-block;
-    padding: 2px 8px;
-    border-radius: 3px;
-    margin-bottom: 0.75rem;
-    letter-spacing: 0.05em;
-  }
-
-  .griha-invariants {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--muted);
-    line-height: 2;
-  }
-
-  @media (max-width: 768px) {
-    .stack-grid { grid-template-columns: 1fr; }
-    .griha-card { grid-template-columns: 1fr; }
-  }
-
-  /* Diagram */
-  .diagram-wrap {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 2rem;
-    overflow-x: auto;
-  }
-
-  /* Principles */
-  .principles-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .principle {
-    background: var(--surface);
-    padding: 1.5rem;
-  }
-
-  .principle-title {
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--amber);
-    margin-bottom: 0.75rem;
-    letter-spacing: 0.04em;
-  }
-
-  .principle-text {
-    font-size: 0.875rem;
-    color: var(--muted);
-    line-height: 1.7;
-  }
-
-  @media (max-width: 768px) {
-    .principles-grid { grid-template-columns: 1fr; }
-  }
-
-  /* Footer */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  footer p {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--muted);
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-  }
-
-  .footer-links a {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--muted);
-    transition: color 0.15s;
-  }
-
-  .footer-links a:hover { color: var(--amber); text-decoration: none; }
-</style>
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/assessment.js" defer></script>
 </head>
 <body>
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Context Stack home"><span class="brand-mark"></span>Context Stack</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/#framework">Framework</a>
+    <a href="/#assessment">Assessment</a>
+    <a href="/#stack">Stack</a>
+    <a href="/mcp/">MCP</a>
+    <a href="/repositories.html">Repositories</a>
+    <a href="/ai-governance.html">Concepts</a>
+    <a class="nav-emphasis" href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</header>
 
-<nav>
-  <div class="nav-brand"><span>context-stack</span> / ai-governance</div>
-  <ul class="nav-links">
-    <li><a href="#stack">Stack</a></li>
-    <li><a href="#use">Use</a></li>
-    <li><a href="#roles">Roles</a></li>
-    <li><a href="/mcp/">MCP</a></li>
-    <li><a href="/repositories.html">Repositories</a></li>
-    <li><a href="/ai-governance.html">Concepts</a></li>
-    <li><a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener" class="nav-badge">GitHub</a></li>
-  </ul>
-</nav>
-
-<div class="hero">
-  <div class="hero-content">
-    <p class="hero-label">Open-source framework</p>
-    <h1>Context Stack</h1>
-    <p class="hero-body">Open-source AI governance framework for context ownership, data egress, runtime placement, and governed delivery.</p>
-    <div class="doctrine">
-      <p>"Probabilistic intelligence must operate inside deterministic governance boundaries."</p>
-    </div>
-    <p class="hero-body" style="margin-bottom:0">Context Stack separates interpretation from authority: models interpret and propose; governed systems validate, authorize, execute, and log.</p>
-    <div class="hero-links">
-      <a href="#use">Start with the framework</a>
-      <a href="/mcp/">Use through MCP</a>
-    </div>
-  </div>
-  <div class="hero-image">
-    <img src="hero.png" alt="Four-layer governance stack architecture illustration" />
-  </div>
-</div>
-
-<section id="overview">
-  <p class="section-label">What this is</p>
-  <div class="overview-grid">
-    <p class="overview-copy">Context Stack is an open-source architecture for building AI systems where models can reason, interpret, and narrate, but deterministic software remains responsible for validation, policy, execution, logging, and approval. It is designed for teams that want useful AI behavior without giving probabilistic output unchecked authority over real-world consequences.</p>
-    <ul class="overview-list">
-      <li><strong>ContextOps:</strong> governs context ownership, lifecycle, trust classification, and accountability.</li>
-      <li><strong>ContextBoundary:</strong> controls where AI-processed data, capabilities, and tool invocations may cross.</li>
-      <li><strong>Sthala:</strong> defines governed execution spaces.</li>
-      <li><strong>Griha:</strong> composes the architecture into usable systems.</li>
-    </ul>
-  </div>
-</section>
-
-<section id="use">
-  <p class="section-label">How teams use it</p>
-  <div class="overview-grid" style="margin-bottom:2rem">
-    <p class="overview-copy">Use Context Stack as the operating map before AI work moves from experiment to delivery. It helps teams decide what context is trusted, where data may flow, where execution belongs, and which approvals are required before an AI-assisted action proceeds.</p>
-    <ul class="overview-list">
-      <li><strong>Assess:</strong> identify current gaps in context ownership, egress control, runtime placement, and approval paths.</li>
-      <li><strong>Route:</strong> decide whether the problem belongs in ContextOps, ContextBoundary, Sthala, or Griha.</li>
-      <li><strong>Apply:</strong> turn the relevant framework layer into delivery questions, controls, and review points.</li>
-      <li><strong>Operate:</strong> use MCP to bring the framework into AI-assisted delivery workflows.</li>
-    </ul>
-  </div>
-  <div class="path-grid">
-    <div class="path-card">
-      <p class="path-title">AMS / Run</p>
-      <p class="path-text">Stops context decay after handover by assigning owners, refresh rules, and operational review paths.</p>
-    </div>
-    <div class="path-card">
-      <p class="path-title">Waterfall / Project</p>
-      <p class="path-text">Keeps context from freezing too early by treating requirements, decisions, and go-live controls as living governance inputs.</p>
-    </div>
-    <div class="path-card">
-      <p class="path-title">Agile / Product</p>
-      <p class="path-text">Captures context that moves through sprints, ceremonies, tickets, chats, and changing product decisions.</p>
-    </div>
-    <div class="path-card">
-      <p class="path-title">Platform / Engineering</p>
-      <p class="path-text">Connects framework decisions to MCP access, policy checks, egress controls, runtime boundaries, and audit evidence.</p>
-    </div>
-  </div>
-</section>
-
-<section id="roles">
-  <p class="section-label">Start by role</p>
-  <div class="path-grid">
-    <div class="path-card">
-      <p class="path-title">CIO / Governance lead</p>
-      <p class="path-text">Start with the assessment view: ownership, accountability, risk posture, and where AI context crosses organizational boundaries.</p>
-    </div>
-    <div class="path-card">
-      <p class="path-title">Enterprise architect</p>
-      <p class="path-text">Map the stack layers to existing architecture: context sources, egress paths, runtime placement, and approval controls.</p>
-    </div>
-    <div class="path-card">
-      <p class="path-title">Delivery lead</p>
-      <p class="path-text">Use the framework to keep decisions, assumptions, runbooks, and sprint context from disappearing between delivery modes.</p>
-    </div>
-    <div class="path-card">
-      <p class="path-title">Platform engineer</p>
-      <p class="path-text">Use the MCP endpoint and repository docs to route AI assistants to the right source before implementation work starts.</p>
-    </div>
-  </div>
-</section>
-
-<section id="stack">
-  <p class="section-label">The stack</p>
-
-  <div class="stack-grid">
-    <div class="stack-card">
-      <p class="stack-card-label">Governance layer</p>
-      <p class="stack-card-name">ContextOps</p>
-      <p class="stack-card-q">How does an organisation govern its AI context?</p>
-      <p class="stack-card-status">v0.1 active - <a href="https://github.com/kannanokannan/ContextOps" target="_blank" rel="noopener">GitHub</a></p>
-    </div>
-    <div class="stack-card">
-      <p class="stack-card-label">Egress layer</p>
-      <p class="stack-card-name">ContextBoundary</p>
-      <p class="stack-card-q">Where is data allowed to go?</p>
-      <p class="stack-card-status">v0.1 active - <a href="https://github.com/kannanokannan/ContextBoundary" target="_blank" rel="noopener">GitHub</a></p>
-    </div>
-    <div class="stack-card">
-      <p class="stack-card-label">Execution layer</p>
-      <p class="stack-card-name">Sthala</p>
-      <p class="stack-card-q">Where does the AI actually run?</p>
-      <p class="stack-card-status">v0.1 Alpha - <a href="https://github.com/kannanokannan/Sthala" target="_blank" rel="noopener">GitHub</a></p>
-    </div>
-  </div>
-
-  <div class="griha-card">
+<main class="page">
+  <section class="hero" id="framework">
     <div>
-      <span class="griha-badge">Product layer</span>
-      <p class="stack-card-name" style="font-size:1.125rem">Griha</p>
-      <p class="stack-card-q">Policy-bounded AI execution for home and edge. Inherits all three governance principles in a working system. The doctrine made real.</p>
-      <p class="stack-card-status">Proof of concept - <a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">GitHub</a></p>
+      <p class="eyebrow">Open-source AI governance framework</p>
+      <h1>Context Stack</h1>
+      <p class="hero-lede">Govern AI context, data egress, runtime placement, and delivery decisions before probabilistic systems receive operational authority.</p>
+      <div class="doctrine">Probabilistic intelligence must operate inside deterministic governance boundaries.</div>
+      <div class="cta-row">
+        <a class="button button-primary" href="#assessment">Start assessment</a>
+        <a class="button" href="/mcp/">Use through MCP</a>
+      </div>
     </div>
-    <div class="griha-invariants">
-      LLMs narrate.<br>
-      Code executes.<br>
-      Humans approve.<br>
-      Absence of permission is denial.
+    <figure class="hero-visual" aria-label="Context Stack architecture illustration">
+      <img src="/hero.png" alt="Four-layer Context Stack architecture diagram">
+      <figcaption class="visual-caption">
+        <span>Context ownership</span>
+        <span>Egress boundary</span>
+        <span>Governed runtime</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Why now</p>
+        <h2>AI work is entering delivery before governance has caught up.</h2>
+      </div>
+      <p class="section-lede">Most teams can make an AI assistant useful. The harder problem is deciding what context it may trust, where data may move, where the system should run, and who approves action.</p>
     </div>
-  </div>
-</section>
-
-<section id="architecture">
-  <p class="section-label">Architecture</p>
-  <div class="diagram-wrap">
-    <svg width="100%" viewBox="0 0 680 480" role="img" xmlns="http://www.w3.org/2000/svg">
-      <title>Context-stack architecture</title>
-      <desc>Griha as product layer above ContextOps, ContextBoundary, and Sthala governance layers, all grounded in the doctrine.</desc>
-      <defs>
-        <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </marker>
-      </defs>
-
-      <!-- Griha -->
-      <rect x="190" y="30" width="300" height="64" rx="8" fill="#8a6a30" fill-opacity="0.3" stroke="#d4a853" stroke-width="1"/>
-      <text x="340" y="57" text-anchor="middle" dominant-baseline="central" fill="#d4a853" font-family="'IBM Plex Mono',monospace" font-size="13" font-weight="500">Griha</text>
-      <text x="340" y="78" text-anchor="middle" dominant-baseline="central" fill="#8a6a30" font-family="'IBM Plex Mono',monospace" font-size="11">product layer - policy-bounded execution</text>
-
-      <!-- Label: Inherits all three -->
-      <text x="108" y="57" text-anchor="middle" dominant-baseline="central" fill="#555" font-family="'IBM Plex Sans',sans-serif" font-size="11">inherits</text>
-      <text x="108" y="70" text-anchor="middle" dominant-baseline="central" fill="#555" font-family="'IBM Plex Sans',sans-serif" font-size="11">all three</text>
-      <line x1="142" y1="62" x2="188" y2="62" stroke="#555" stroke-width="0.5" marker-end="url(#arr)"/>
-
-      <!-- Arrows down from Griha -->
-      <line x1="265" y1="94" x2="175" y2="145" stroke="#333" stroke-width="0.5" marker-end="url(#arr)"/>
-      <line x1="340" y1="94" x2="340" y2="145" stroke="#333" stroke-width="0.5" marker-end="url(#arr)"/>
-      <line x1="415" y1="94" x2="505" y2="145" stroke="#333" stroke-width="0.5" marker-end="url(#arr)"/>
-
-      <!-- ContextOps -->
-      <rect x="40" y="147" width="175" height="60" rx="6" fill="#0f3028" stroke="#2a7d6e" stroke-width="0.5"/>
-      <text x="127" y="171" text-anchor="middle" dominant-baseline="central" fill="#4db8a0" font-family="'IBM Plex Mono',monospace" font-size="12" font-weight="500">ContextOps</text>
-      <text x="127" y="190" text-anchor="middle" dominant-baseline="central" fill="#2a7d6e" font-family="'IBM Plex Mono',monospace" font-size="10">governance layer</text>
-
-      <!-- ContextBoundary -->
-      <rect x="252" y="147" width="176" height="60" rx="6" fill="#1a1440" stroke="#534AB7" stroke-width="0.5"/>
-      <text x="340" y="171" text-anchor="middle" dominant-baseline="central" fill="#AFA9EC" font-family="'IBM Plex Mono',monospace" font-size="12" font-weight="500">ContextBoundary</text>
-      <text x="340" y="190" text-anchor="middle" dominant-baseline="central" fill="#534AB7" font-family="'IBM Plex Mono',monospace" font-size="10">egress layer</text>
-
-      <!-- Sthala -->
-      <rect x="465" y="147" width="175" height="60" rx="6" fill="#0f3028" stroke="#2a7d6e" stroke-width="0.5"/>
-      <text x="552" y="171" text-anchor="middle" dominant-baseline="central" fill="#4db8a0" font-family="'IBM Plex Mono',monospace" font-size="12" font-weight="500">Sthala</text>
-      <text x="552" y="190" text-anchor="middle" dominant-baseline="central" fill="#2a7d6e" font-family="'IBM Plex Mono',monospace" font-size="10">execution layer</text>
-
-      <!-- Converging lines -->
-      <line x1="127" y1="207" x2="127" y2="265" stroke="#242424" stroke-width="0.5"/>
-      <line x1="340" y1="207" x2="340" y2="265" stroke="#242424" stroke-width="0.5"/>
-      <line x1="552" y1="207" x2="552" y2="265" stroke="#242424" stroke-width="0.5"/>
-      <line x1="127" y1="265" x2="552" y2="265" stroke="#242424" stroke-width="0.5"/>
-      <line x1="340" y1="265" x2="340" y2="295" stroke="#555" stroke-width="0.5" marker-end="url(#arr)"/>
-
-      <!-- Doctrine block -->
-      <rect x="90" y="297" width="500" height="52" rx="6" fill="#141414" stroke="#333" stroke-width="0.5"/>
-      <text x="340" y="317" text-anchor="middle" dominant-baseline="central" fill="#555" font-family="'IBM Plex Mono',monospace" font-size="10">doctrine</text>
-      <text x="340" y="335" text-anchor="middle" dominant-baseline="central" fill="#d4a853" font-family="'IBM Plex Mono',monospace" font-size="11">Probabilistic intelligence inside deterministic governance boundaries</text>
-
-      <line x1="340" y1="349" x2="340" y2="378" stroke="#242424" stroke-width="0.5"/>
-
-      <!-- Invariants block -->
-      <rect x="40" y="380" width="600" height="62" rx="4" fill="none" stroke="#242424" stroke-width="0.5" stroke-dasharray="4 3"/>
-      <text x="340" y="402" text-anchor="middle" dominant-baseline="central" fill="#444" font-family="'IBM Plex Mono',monospace" font-size="10">LLMs narrate - Code executes - Humans approve - Absence of permission is denial</text>
-      <text x="340" y="422" text-anchor="middle" dominant-baseline="central" fill="#444" font-family="'IBM Plex Mono',monospace" font-size="10">All failure modes deny - State sets risk, not the model - No unlogged actions</text>
-
-      <!-- Footer -->
-      <text x="340" y="462" text-anchor="middle" dominant-baseline="central" fill="#333" font-family="'IBM Plex Mono',monospace" font-size="10">context-stack.org - Apache 2.0</text>
-    </svg>
-  </div>
-</section>
-
-<section id="principles">
-  <p class="section-label">Governance principles</p>
-  <div class="principles-grid">
-    <div class="principle">
-      <p class="principle-title">Authority boundaries</p>
-      <p class="principle-text">LLMs may interpret intent and narrate results. LLMs may not directly authorize irreversible side effects, own computation outcomes, bypass deterministic validation, or infer trust beyond what is explicitly declared.</p>
+    <div class="grid-4">
+      <div class="panel">
+        <span class="tag">Context</span>
+        <h3>Who owns the facts?</h3>
+        <p>Context gets stale, duplicated, or trapped in handover notes, tickets, chats, and individual memory.</p>
+      </div>
+      <div class="panel">
+        <span class="tag">Boundary</span>
+        <h3>Where may data go?</h3>
+        <p>Prompts, embeddings, logs, tools, APIs, and vendors create data movement that ordinary project controls often miss.</p>
+      </div>
+      <div class="panel">
+        <span class="tag">Runtime</span>
+        <h3>Where should AI run?</h3>
+        <p>Cloud, on-premise, edge, and hybrid choices need policy, sovereignty, and control reasoning before deployment.</p>
+      </div>
+      <div class="panel">
+        <span class="tag">Delivery</span>
+        <h3>Who approves action?</h3>
+        <p>Models can interpret and propose. Deterministic systems must validate, authorize, execute, and log.</p>
+      </div>
     </div>
-    <div class="principle">
-      <p class="principle-title">Operational invariants</p>
-      <p class="principle-text">The narrate/compute split is absolute: no exceptions across any project. Every egress flow is tier-classified before crossing a boundary. Human override always exists for critical domains. No unlogged actions.</p>
-    </div>
-    <div class="principle">
-      <p class="principle-title">Failure philosophy</p>
-      <p class="principle-text">This stack assumes LLMs will misinterpret, hallucinate, and exceed their authority if unconstrained. The architecture is designed for that assumption, not against it. Safety comes from deterministic boundaries, not model quality.</p>
-    </div>
-    <div class="principle">
-      <p class="principle-title">What LLMs must not infer</p>
-      <p class="principle-text">Autonomy is not a goal: bounded execution is. Speed does not trump governance. Missing policy means denied. Probabilistic output never carries deterministic authority.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="technical-access">
-  <p class="section-label">Technical access</p>
-  <div class="overview-grid">
-    <p class="overview-copy">The framework is human-readable and machine-readable. People can start with the repository map and concepts page; AI assistants can use the LLM discovery file or the read-only MCP endpoint.</p>
-    <ul class="overview-list">
-      <li><strong>Repository map:</strong> <a href="/repositories.html">all Context Stack repositories</a>.</li>
-      <li><strong>Concepts:</strong> <a href="/ai-governance.html">plain-language AI governance reference</a>.</li>
-      <li><strong>LLM discovery:</strong> <a href="/llms.txt">llms.txt</a>.</li>
-      <li><strong>MCP:</strong> <a href="/mcp/">use Context Stack through MCP</a>.</li>
+  <section class="section" id="assessment">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Guided entry point</p>
+        <h2>Start with a three-question assessment.</h2>
+      </div>
+      <p class="section-lede">No login, no tracking, no stored answers. The wizard routes the problem to the right part of the framework and gives you a prompt you can use through MCP or any AI assistant.</p>
+    </div>
+
+    <div class="wizard">
+      <div class="wizard-main">
+        <div class="question">
+          <p class="question-title">1. What are you trying to govern?</p>
+          <div class="choice-grid">
+            <button class="choice" type="button" data-choice data-group="problem" data-value="context" aria-pressed="false">AI context ownership or freshness</button>
+            <button class="choice" type="button" data-choice data-group="problem" data-value="egress" aria-pressed="false">Data movement or egress</button>
+            <button class="choice" type="button" data-choice data-group="problem" data-value="runtime" aria-pressed="false">Runtime placement</button>
+            <button class="choice" type="button" data-choice data-group="problem" data-value="delivery" aria-pressed="false">Delivery workflow or operating model</button>
+            <button class="choice" type="button" data-choice data-group="problem" data-value="unsure" aria-pressed="false">Not sure yet</button>
+          </div>
+        </div>
+
+        <div class="question">
+          <p class="question-title">2. Which delivery mode are you in?</p>
+          <div class="choice-grid">
+            <button class="choice" type="button" data-choice data-group="delivery" data-value="ams" aria-pressed="false">AMS / Run</button>
+            <button class="choice" type="button" data-choice data-group="delivery" data-value="waterfall" aria-pressed="false">Waterfall / Project</button>
+            <button class="choice" type="button" data-choice data-group="delivery" data-value="agile" aria-pressed="false">Agile / Product</button>
+            <button class="choice" type="button" data-choice data-group="delivery" data-value="platform" aria-pressed="false">Platform / Engineering</button>
+            <button class="choice" type="button" data-choice data-group="delivery" data-value="mixed" aria-pressed="false">Mixed / unknown</button>
+          </div>
+        </div>
+
+        <div class="question">
+          <p class="question-title">3. What do you need next?</p>
+          <div class="choice-grid">
+            <button class="choice" type="button" data-choice data-group="need" data-value="assessment" aria-pressed="false">Governance assessment</button>
+            <button class="choice" type="button" data-choice data-group="need" data-value="architecture" aria-pressed="false">Architecture guidance</button>
+            <button class="choice" type="button" data-choice data-group="need" data-value="controls" aria-pressed="false">Policy and control mapping</button>
+            <button class="choice" type="button" data-choice data-group="need" data-value="mcp" aria-pressed="false">MCP workflow integration</button>
+            <button class="choice" type="button" data-choice data-group="need" data-value="docs" aria-pressed="false">Repository or document entry point</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="wizard-result" aria-live="polite">
+        <p class="result-label" data-progress>0 / 3 answered</p>
+        <p class="result-label">Recommended starting layer</p>
+        <h3 class="result-title" data-result-title>ContextOps</h3>
+        <p class="result-text" data-result-text>Start with the organizational assessment, then route data movement and runtime questions to the boundary and execution layers.</p>
+        <ul class="result-list" data-result-meta></ul>
+        <p class="result-label">Read first</p>
+        <ul class="result-list" data-result-docs></ul>
+        <p class="result-label">MCP-ready prompt</p>
+        <textarea class="prompt-box" data-result-prompt readonly></textarea>
+        <button class="button" type="button" data-copy-prompt>Copy prompt</button>
+        <div class="copy-status" data-copy-status></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">How teams use it</p>
+        <h2>Assess, map, apply, operate.</h2>
+      </div>
+      <p class="section-lede">Context Stack is meant to sit before and during delivery. It gives teams a governance map before they choose tools or automate workflows.</p>
+    </div>
+    <div class="grid-4">
+      <div class="panel">
+        <span class="tag">1</span>
+        <h3>Assess</h3>
+        <p>Find weak ownership, stale context, unclear egress rules, missing runtime policy, or approval gaps.</p>
+      </div>
+      <div class="panel">
+        <span class="tag">2</span>
+        <h3>Map</h3>
+        <p>Route the issue to ContextOps, ContextBoundary, Sthala, or Griha instead of treating every AI problem as one blob.</p>
+      </div>
+      <div class="panel">
+        <span class="tag">3</span>
+        <h3>Apply</h3>
+        <p>Turn the selected layer into delivery questions, control points, decision records, and review gates.</p>
+      </div>
+      <div class="panel">
+        <span class="tag">4</span>
+        <h3>Operate</h3>
+        <p>Use MCP to bring the framework into AI-assisted work while enforcement remains in deterministic systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Delivery modes</p>
+        <h2>The framework works across AMS, waterfall, agile, and platform work.</h2>
+      </div>
+      <p class="section-lede">Different delivery modes lose context in different ways. Context Stack gives each mode a governance path without pretending they operate the same way.</p>
+    </div>
+    <div class="grid-4">
+      <div class="panel">
+        <h3>AMS / Run</h3>
+        <p>Context decays after handover. Ownership disappears, runbooks drift, and operations rebuild from fragments.</p>
+      </div>
+      <div class="panel">
+        <h3>Waterfall / Project</h3>
+        <p>Context freezes too early. Requirements and design decisions can be stale before go-live.</p>
+      </div>
+      <div class="panel">
+        <h3>Agile / Product</h3>
+        <p>Context changes every sprint. Decisions live in ceremonies, tickets, chats, and people.</p>
+      </div>
+      <div class="panel">
+        <h3>Platform / Engineering</h3>
+        <p>Framework decisions must become policy checks, egress controls, runtime boundaries, and audit evidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="stack">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Framework layers</p>
+        <h2>One stack, four questions.</h2>
+      </div>
+      <p class="section-lede">The layers are separate on purpose. Context ownership, data movement, runtime placement, and product delivery should not be collapsed into one control model.</p>
+    </div>
+    <ul class="stack-list">
+      <li>
+        <a href="https://github.com/kannanokannan/ContextOps" target="_blank" rel="noopener">ContextOps</a>
+        <span class="summary">How does an organization govern its AI context?</span>
+        <p class="details">Ownership, lifecycle, freshness, roles, maturity, named practices, and context accountability.</p>
+      </li>
+      <li>
+        <a href="https://github.com/kannanokannan/ContextBoundary" target="_blank" rel="noopener">ContextBoundary</a>
+        <span class="summary">Where is data allowed to go?</span>
+        <p class="details">Egress Tier controls, vendor zones, jurisdictional profiles, approval paths, and audit boundaries.</p>
+      </li>
+      <li>
+        <a href="https://github.com/kannanokannan/Sthala" target="_blank" rel="noopener">Sthala</a>
+        <span class="summary">Where does the AI actually run?</span>
+        <p class="details">Sovereign on-premise AI reference architecture and governed execution placement.</p>
+      </li>
+      <li>
+        <a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">Griha</a>
+        <span class="summary">How does governed AI become usable?</span>
+        <p class="details">Product and adoption layer that composes governed AI capabilities into practical workflows.</p>
+      </li>
     </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Trust boundary</p>
+        <h2>Models propose. Systems authorize.</h2>
+      </div>
+      <p class="section-lede">Prompt injection, unsafe automation, context contamination, and authority confusion are boundary problems. Better prompts help; deterministic boundaries decide.</p>
+    </div>
+    <div class="boundary">
+      <div class="boundary-card bad">
+        <h3>Ungoverned AI flow</h3>
+        <ul class="boundary-list">
+          <li>User prompt</li>
+          <li>LLM interpretation shares the trust boundary</li>
+          <li>Tool, API, or system action follows model output</li>
+          <li>Review and audit are reconstructed later</li>
+        </ul>
+      </div>
+      <div class="boundary-card good">
+        <h3>Context Stack flow</h3>
+        <ul class="boundary-list">
+          <li>Model interprets and proposes</li>
+          <li>Context and egress policy are checked</li>
+          <li>Deterministic systems authorize execution</li>
+          <li>Human review and logs remain explicit</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">MCP access</p>
+        <h2>The framework can enter the workflow.</h2>
+      </div>
+      <p class="section-lede">MCP is not the framework. MCP is the access path that lets AI assistants consult the framework during delivery, assessment, and architecture review.</p>
+    </div>
+    <div class="grid-2">
+      <div class="panel panel-strong">
+        <h3>Use MCP for</h3>
+        <ul>
+          <li>Routing a problem to the right stack layer.</li>
+          <li>Running a first-pass governance assessment.</li>
+          <li>Finding the right source documents.</li>
+          <li>Creating delivery questions before implementation starts.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Endpoint</h3>
+        <p><code>https://mcp.context-stack.org/mcp</code></p>
+        <p style="margin-top:1rem"><a class="button" href="/mcp/">Open MCP guide</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">What this is not</p>
+        <h2>Clear boundaries keep the framework honest.</h2>
+      </div>
+      <p class="section-lede">Context Stack defines governance language, assessment paths, and architectural boundaries. It does not claim to replace implementation controls.</p>
+    </div>
+    <div class="grid-4">
+      <div class="panel">
+        <h3>Not a compliance certificate</h3>
+        <p>It helps structure evidence and decisions, but it does not certify an organization by itself.</p>
+      </div>
+      <div class="panel">
+        <h3>Not an enforcement engine</h3>
+        <p>Gateways, IAM, policy engines, egress controls, approvals, and runtimes enforce the rules.</p>
+      </div>
+      <div class="panel">
+        <h3>Not a prompt library</h3>
+        <p>Prompting is useful, but authority belongs in deterministic controls and explicit governance paths.</p>
+      </div>
+      <div class="panel">
+        <h3>Not vendor-bound</h3>
+        <p>The stack is designed to sit alongside existing cloud, on-premise, hybrid, and edge choices.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Resources</p>
+        <h2>Use the framework as text, code, or machine-readable context.</h2>
+      </div>
+      <p class="section-lede">People can read the framework and repository map. AI assistants can use llms.txt or the MCP endpoint to route questions into the right source.</p>
+    </div>
+    <div class="grid-4">
+      <div class="panel">
+        <h3>Repositories</h3>
+        <p><a href="/repositories.html">Open the repo map</a></p>
+      </div>
+      <div class="panel">
+        <h3>Concepts</h3>
+        <p><a href="/ai-governance.html">Read the governance reference</a></p>
+      </div>
+      <div class="panel">
+        <h3>LLM discovery</h3>
+        <p><a href="/llms.txt">Open llms.txt</a></p>
+      </div>
+      <div class="panel">
+        <h3>GitHub</h3>
+        <p><a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">Open context-stack</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-note">Apache 2.0. Open-source AI governance framework.</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/#framework">Framework</a>
+      <a href="/#assessment">Assessment</a>
+      <a href="/mcp/">MCP</a>
+      <a href="/repositories.html">Repositories</a>
+      <a href="/ai-governance.html">Concepts</a>
+      <a href="/llms.txt">llms.txt</a>
+      <a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">GitHub</a>
+    </nav>
   </div>
-</section>
-
-<footer>
-  <p>Apache 2.0 - All projects open source</p>
-  <ul class="footer-links">
-    <li><a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">context-stack</a></li>
-    <li><a href="/ai-governance.html">Concepts</a></li>
-    <li><a href="https://github.com/kannanokannan/context-stack-mcp" target="_blank" rel="noopener">MCP</a></li>
-    <li><a href="https://github.com/kannanokannan/ContextOps" target="_blank" rel="noopener">ContextOps</a></li>
-    <li><a href="https://github.com/kannanokannan/ContextBoundary" target="_blank" rel="noopener">ContextBoundary</a></li>
-    <li><a href="https://github.com/kannanokannan/Sthala" target="_blank" rel="noopener">Sthala</a></li>
-    <li><a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">Griha</a></li>
-  </ul>
 </footer>
-
 </body>
 </html>

@@ -1,12 +1,12 @@
 # Context Stack
 
-Open-source AI governance architecture for placing probabilistic intelligence inside deterministic governance boundaries.
+Open-source AI governance framework for placing probabilistic intelligence inside deterministic governance boundaries.
 
-The project is about governed AI systems: context governance, deployment-agnostic egress boundaries, governed execution, and application-level composition. The canonical website is https://context-stack.org/.
+The project is about governed AI systems: context ownership, deployment-agnostic egress boundaries, runtime placement, governed delivery, and application-level composition. The canonical website is https://context-stack.org/.
 
 ## Website
 
-- Context Stack landing page: https://context-stack.org/
+- Context Stack landing page and guided assessment: https://context-stack.org/
 - Repository map: https://context-stack.org/repositories.html
 - AI governance concepts: https://context-stack.org/ai-governance.html
 - MCP access page: https://context-stack.org/mcp/
