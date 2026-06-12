@@ -28,9 +28,11 @@
     color: var(--text);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     line-height: 1.7;
+    overflow-x: hidden;
   }
 
   main {
+    width: min(100%, 980px);
     max-width: 980px;
     margin: 0 auto;
     padding: 52px 24px 72px;
@@ -41,6 +43,9 @@
     flex-wrap: wrap;
     gap: 18px;
     margin-bottom: 44px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   a { color: var(--amber); text-decoration: none; }
@@ -52,6 +57,7 @@
     font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 500;
     line-height: 1.12;
+    overflow-wrap: break-word;
   }
 
   h2 {
@@ -64,6 +70,7 @@
     max-width: 780px;
     color: var(--muted);
     margin: 0 0 18px;
+    overflow-wrap: break-word;
   }
 
   .lead {
@@ -91,11 +98,14 @@
     border: 1px solid var(--border);
     border-radius: 8px;
     overflow: hidden;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .panel {
     background: var(--surface);
     padding: 22px;
+    min-width: 0;
   }
 
   .panel h2 {
@@ -111,6 +121,10 @@
   }
 
   li { margin: 8px 0; }
+
+  nav a, li {
+    overflow-wrap: break-word;
+  }
 
   code, pre {
     font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
@@ -140,6 +154,24 @@
   }
 
   @media (max-width: 760px) {
+    main {
+      width: 100vw;
+      max-width: 100vw;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    main > * {
+      width: calc(100vw - 48px);
+      max-width: calc(100vw - 48px);
+    }
+
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
     .grid { grid-template-columns: 1fr; }
   }
 </style>
@@ -154,11 +186,10 @@
     <a href="https://github.com/kannanokannan/context-stack-mcp" target="_blank" rel="noopener">MCP repo</a>
   </nav>
 
-  <p class="tag">Machine access</p>
+  <p class="tag">Framework access</p>
   <h1>Use Context Stack through MCP</h1>
   <p class="lead">Context Stack is the framework. MCP is the access path that lets AI assistants consult it during delivery and assessment.</p>
-
-  <div class="endpoint">https://mcp.context-stack.org/mcp</div>
+  <p>Use it when an AI assistant is helping with requirements, architecture review, AMS handover, sprint planning, platform design, or AI governance assessment. The assistant can ask the framework which layer applies before work proceeds.</p>
 
   <div class="grid">
     <section class="panel">
@@ -181,6 +212,15 @@
     </section>
   </div>
 
+  <h2>Assessment use</h2>
+  <p>Use the MCP endpoint as a framework consultation layer. An AI assistant can ask which stack layer applies, retrieve the right source, and guide a first-pass assessment of context ownership, egress boundaries, runtime placement, and approval paths.</p>
+  <ul>
+    <li>Identify the delivery mode: AMS, waterfall, agile, product, platform, or mixed.</li>
+    <li>Route the issue to ContextOps, ContextBoundary, Sthala, or Griha.</li>
+    <li>Turn the selected layer into governance questions and review points.</li>
+    <li>Keep enforcement in deterministic systems: gateways, IAM, policy engines, egress controls, approval workflows, and runtime controls.</li>
+  </ul>
+
   <h2>Example questions</h2>
   <ul>
     <li>Which part of Context Stack applies to stale runbooks after AMS handover?</li>
@@ -190,13 +230,13 @@
     <li>Which framework document should a delivery team read first?</li>
   </ul>
 
+  <h2>Endpoint</h2>
+  <div class="endpoint">https://mcp.context-stack.org/mcp</div>
+
   <h2>JSON-RPC smoke test</h2>
   <pre><code>curl -X POST https://mcp.context-stack.org/mcp \
   -H "content-type: application/json" \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'</code></pre>
-
-  <h2>Assessment use</h2>
-  <p>Use the MCP endpoint as a framework consultation layer. An AI assistant can ask which stack layer applies, retrieve the right source, and guide a first-pass assessment of context ownership, egress boundaries, runtime placement, and approval paths.</p>
 
   <p class="note">Enforcement remains deterministic infrastructure work. Agents learn the rules through MCP; gateways, IAM, OPA, egress controls, approval workflows, and runtime controls enforce them.</p>
 </main>

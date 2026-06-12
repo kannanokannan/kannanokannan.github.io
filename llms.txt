@@ -6,7 +6,7 @@ The project is about governed AI systems: context governance, deployment-agnosti
 
 ## Website
 
-- AI Governance Stack landing page: https://context-stack.org/
+- Context Stack landing page: https://context-stack.org/
 - Repository map: https://context-stack.org/repositories.html
 - AI governance concepts: https://context-stack.org/ai-governance.html
 - MCP access page: https://context-stack.org/mcp/

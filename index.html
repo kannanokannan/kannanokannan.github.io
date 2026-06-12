@@ -89,6 +89,7 @@
     font-family: var(--sans);
     font-weight: 300;
     line-height: 1.7;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -100,6 +101,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    width: 100%;
     background: rgba(10,10,10,0.92);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border);
@@ -124,6 +126,7 @@
     align-items: center;
     gap: 1.5rem;
     list-style: none;
+    min-width: 0;
   }
 
   .nav-links a {
@@ -143,8 +146,27 @@
     border-radius: 3px;
   }
 
+  @media (max-width: 900px) {
+    nav {
+      height: auto;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 0.75rem 1.5rem;
+    }
+
+    .nav-links {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  }
+
   /* Hero */
   .hero {
+    width: min(100%, 1100px);
     max-width: 1100px;
     margin: 0 auto;
     padding: 6.5rem 2rem 4.5rem;
@@ -154,9 +176,31 @@
     align-items: center;
   }
 
+  .hero-content,
+  .hero-image,
+  .overview-grid > *,
+  .path-card,
+  .stack-card,
+  .griha-card > *,
+  .principle {
+    min-width: 0;
+  }
+
   @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+    .hero {
+      width: 100%;
+      max-width: 100%;
+      grid-template-columns: 1fr;
+      padding: 3rem 1.5rem;
+    }
     .hero-image { display: none; }
+    .hero-links { flex-direction: column; align-items: flex-start; }
+    .hero-content,
+    .hero-body,
+    .doctrine {
+      width: calc(100vw - 3rem);
+      max-width: calc(100vw - 3rem);
+    }
   }
 
   .hero-label {
@@ -174,6 +218,7 @@
     line-height: 1.25;
     color: var(--text);
     margin-bottom: 1.5rem;
+    overflow-wrap: break-word;
   }
 
   .hero-body {
@@ -181,6 +226,7 @@
     color: var(--muted);
     line-height: 1.8;
     margin-bottom: 2rem;
+    overflow-wrap: break-word;
   }
 
   .hero-links {
@@ -197,6 +243,7 @@
     border: 1px solid var(--amber-dim);
     border-radius: 4px;
     padding: 0.5rem 0.75rem;
+    overflow-wrap: break-word;
   }
 
   .hero-links a:hover {
@@ -228,6 +275,7 @@
     border-radius: 0 4px 4px 0;
     margin-bottom: 2rem;
     box-shadow: inset 0 0 0 1px rgba(212,168,83,0.08);
+    max-width: 100%;
   }
 
   .doctrine p {
@@ -235,10 +283,12 @@
     font-size: 0.875rem;
     color: var(--amber);
     line-height: 1.6;
+    overflow-wrap: break-word;
   }
 
   /* Section */
   section {
+    width: min(100%, 1100px);
     max-width: 1100px;
     margin: 0 auto;
     padding: 4rem 2rem;
@@ -265,6 +315,7 @@
   .overview-copy {
     color: var(--muted);
     max-width: 62ch;
+    overflow-wrap: break-word;
   }
 
   .overview-list {
@@ -277,6 +328,7 @@
     padding: 0.9rem 0;
     color: var(--muted);
     font-size: 0.9rem;
+    overflow-wrap: break-word;
   }
 
   .overview-list strong {
@@ -285,7 +337,57 @@
   }
 
   @media (max-width: 768px) {
+    section {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
     .overview-grid { grid-template-columns: 1fr; }
+
+    .overview-copy,
+    .overview-list {
+      width: calc(100vw - 3rem);
+      max-width: calc(100vw - 3rem);
+    }
+  }
+
+  /* Use paths */
+  .path-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .path-card {
+    background: var(--surface);
+    padding: 1.25rem;
+  }
+
+  .path-title {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--amber);
+    margin-bottom: 0.75rem;
+  }
+
+  .path-text {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 900px) {
+    .path-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 560px) {
+    .path-grid { grid-template-columns: 1fr; }
   }
 
   /* Stack grid */
@@ -464,30 +566,27 @@
   <div class="nav-brand"><span>context-stack</span> / ai-governance</div>
   <ul class="nav-links">
     <li><a href="#stack">Stack</a></li>
+    <li><a href="#use">Use</a></li>
+    <li><a href="#roles">Roles</a></li>
+    <li><a href="/mcp/">MCP</a></li>
     <li><a href="/repositories.html">Repositories</a></li>
     <li><a href="/ai-governance.html">Concepts</a></li>
-    <li><a href="/mcp/">MCP</a></li>
-    <li><a href="#architecture">Architecture</a></li>
-    <li><a href="#principles">Principles</a></li>
     <li><a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener" class="nav-badge">GitHub</a></li>
   </ul>
 </nav>
 
 <div class="hero">
   <div class="hero-content">
-    <p class="hero-label">The problem</p>
-    <h1>Modern AI systems let interpretation, decision-making, and execution share one trust boundary.</h1>
-    <p class="hero-body">That lets probabilistic systems directly own deterministic consequences: the root cause of prompt injection, unsafe automation, context contamination, and authority confusion.</p>
+    <p class="hero-label">Open-source framework</p>
+    <h1>Context Stack</h1>
+    <p class="hero-body">Open-source AI governance framework for context ownership, data egress, runtime placement, and governed delivery.</p>
     <div class="doctrine">
       <p>"Probabilistic intelligence must operate inside deterministic governance boundaries."</p>
     </div>
-    <p class="hero-body" style="margin-bottom:0">The context-stack separates interpretation from authority: intelligence proposes, governance validates, execution authorizes.</p>
+    <p class="hero-body" style="margin-bottom:0">Context Stack separates interpretation from authority: models interpret and propose; governed systems validate, authorize, execute, and log.</p>
     <div class="hero-links">
-      <a href="/repositories.html">View repositories</a>
-      <a href="/ai-governance.html">AI governance concepts</a>
-      <a href="/llms.txt">LLM discovery file</a>
+      <a href="#use">Start with the framework</a>
       <a href="/mcp/">Use through MCP</a>
-      <a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">context-stack on GitHub</a>
     </div>
   </div>
   <div class="hero-image">
@@ -498,13 +597,66 @@
 <section id="overview">
   <p class="section-label">What this is</p>
   <div class="overview-grid">
-    <p class="overview-copy">The AI Governance Stack is an open-source architecture for building AI systems where models can reason, interpret, and narrate, but deterministic software remains responsible for validation, policy, execution, logging, and approval. It is designed for teams that want useful AI behavior without giving probabilistic output unchecked authority over real-world consequences.</p>
+    <p class="overview-copy">Context Stack is an open-source architecture for building AI systems where models can reason, interpret, and narrate, but deterministic software remains responsible for validation, policy, execution, logging, and approval. It is designed for teams that want useful AI behavior without giving probabilistic output unchecked authority over real-world consequences.</p>
     <ul class="overview-list">
       <li><strong>ContextOps:</strong> governs context ownership, lifecycle, trust classification, and accountability.</li>
       <li><strong>ContextBoundary:</strong> controls where AI-processed data, capabilities, and tool invocations may cross.</li>
       <li><strong>Sthala:</strong> defines governed execution spaces.</li>
       <li><strong>Griha:</strong> composes the architecture into usable systems.</li>
     </ul>
+  </div>
+</section>
+
+<section id="use">
+  <p class="section-label">How teams use it</p>
+  <div class="overview-grid" style="margin-bottom:2rem">
+    <p class="overview-copy">Use Context Stack as the operating map before AI work moves from experiment to delivery. It helps teams decide what context is trusted, where data may flow, where execution belongs, and which approvals are required before an AI-assisted action proceeds.</p>
+    <ul class="overview-list">
+      <li><strong>Assess:</strong> identify current gaps in context ownership, egress control, runtime placement, and approval paths.</li>
+      <li><strong>Route:</strong> decide whether the problem belongs in ContextOps, ContextBoundary, Sthala, or Griha.</li>
+      <li><strong>Apply:</strong> turn the relevant framework layer into delivery questions, controls, and review points.</li>
+      <li><strong>Operate:</strong> use MCP to bring the framework into AI-assisted delivery workflows.</li>
+    </ul>
+  </div>
+  <div class="path-grid">
+    <div class="path-card">
+      <p class="path-title">AMS / Run</p>
+      <p class="path-text">Stops context decay after handover by assigning owners, refresh rules, and operational review paths.</p>
+    </div>
+    <div class="path-card">
+      <p class="path-title">Waterfall / Project</p>
+      <p class="path-text">Keeps context from freezing too early by treating requirements, decisions, and go-live controls as living governance inputs.</p>
+    </div>
+    <div class="path-card">
+      <p class="path-title">Agile / Product</p>
+      <p class="path-text">Captures context that moves through sprints, ceremonies, tickets, chats, and changing product decisions.</p>
+    </div>
+    <div class="path-card">
+      <p class="path-title">Platform / Engineering</p>
+      <p class="path-text">Connects framework decisions to MCP access, policy checks, egress controls, runtime boundaries, and audit evidence.</p>
+    </div>
+  </div>
+</section>
+
+<section id="roles">
+  <p class="section-label">Start by role</p>
+  <div class="path-grid">
+    <div class="path-card">
+      <p class="path-title">CIO / Governance lead</p>
+      <p class="path-text">Start with the assessment view: ownership, accountability, risk posture, and where AI context crosses organizational boundaries.</p>
+    </div>
+    <div class="path-card">
+      <p class="path-title">Enterprise architect</p>
+      <p class="path-text">Map the stack layers to existing architecture: context sources, egress paths, runtime placement, and approval controls.</p>
+    </div>
+    <div class="path-card">
+      <p class="path-title">Delivery lead</p>
+      <p class="path-text">Use the framework to keep decisions, assumptions, runbooks, and sprint context from disappearing between delivery modes.</p>
+    </div>
+    <div class="path-card">
+      <p class="path-title">Platform engineer</p>
+      <p class="path-text">Use the MCP endpoint and repository docs to route AI assistants to the right source before implementation work starts.</p>
+    </div>
   </div>
 </section>
 
@@ -634,6 +786,19 @@
       <p class="principle-title">What LLMs must not infer</p>
       <p class="principle-text">Autonomy is not a goal: bounded execution is. Speed does not trump governance. Missing policy means denied. Probabilistic output never carries deterministic authority.</p>
     </div>
+  </div>
+</section>
+
+<section id="technical-access">
+  <p class="section-label">Technical access</p>
+  <div class="overview-grid">
+    <p class="overview-copy">The framework is human-readable and machine-readable. People can start with the repository map and concepts page; AI assistants can use the LLM discovery file or the read-only MCP endpoint.</p>
+    <ul class="overview-list">
+      <li><strong>Repository map:</strong> <a href="/repositories.html">all Context Stack repositories</a>.</li>
+      <li><strong>Concepts:</strong> <a href="/ai-governance.html">plain-language AI governance reference</a>.</li>
+      <li><strong>LLM discovery:</strong> <a href="/llms.txt">llms.txt</a>.</li>
+      <li><strong>MCP:</strong> <a href="/mcp/">use Context Stack through MCP</a>.</li>
+    </ul>
   </div>
 </section>
 
