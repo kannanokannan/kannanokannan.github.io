@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP Access | Context Stack</title>
+<meta name="description" content="Use the Context Stack AI governance framework through a read-only MCP endpoint for discovery, assessment, and delivery guidance.">
+<meta name="robots" content="index,follow,max-snippet:-1">
+<meta name="author" content="Context Stack Project">
+<link rel="canonical" href="https://context-stack.org/mcp/">
+<link rel="alternate" type="text/plain" title="LLM discovery" href="/llms.txt">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #131313;
+    --border: #282828;
+    --text: #e5e5e5;
+    --muted: #a2a2a2;
+    --amber: #d4a853;
+    --teal: #64b9a9;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.7;
+  }
+
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 52px 24px 72px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 44px;
+  }
+
+  a { color: var(--amber); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  h1 {
+    max-width: 760px;
+    margin: 0 0 18px;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 500;
+    line-height: 1.12;
+  }
+
+  h2 {
+    margin: 44px 0 14px;
+    font-size: 1.35rem;
+    font-weight: 500;
+  }
+
+  p {
+    max-width: 780px;
+    color: var(--muted);
+    margin: 0 0 18px;
+  }
+
+  .lead {
+    color: #d0d0d0;
+    font-size: 1.15rem;
+  }
+
+  .endpoint {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber);
+    border-radius: 4px;
+    color: var(--amber);
+    font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+    margin: 26px 0 34px;
+    overflow-x: auto;
+    padding: 18px 20px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .panel {
+    background: var(--surface);
+    padding: 22px;
+  }
+
+  .panel h2 {
+    color: var(--text);
+    font-size: 1rem;
+    margin: 0 0 12px;
+  }
+
+  ul {
+    color: var(--muted);
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  li { margin: 8px 0; }
+
+  code, pre {
+    font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  }
+
+  pre {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: #d8d8d8;
+    overflow-x: auto;
+    padding: 18px;
+  }
+
+  .note {
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    margin-top: 42px;
+    padding-top: 22px;
+  }
+
+  .tag {
+    color: var(--teal);
+    font-size: 0.86rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  @media (max-width: 760px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <nav>
+    <a href="/">Context Stack</a>
+    <a href="/repositories.html">Repositories</a>
+    <a href="/ai-governance.html">Concepts</a>
+    <a href="/llms.txt">LLM discovery</a>
+    <a href="https://github.com/kannanokannan/context-stack-mcp" target="_blank" rel="noopener">MCP repo</a>
+  </nav>
+
+  <p class="tag">Machine access</p>
+  <h1>Use Context Stack through MCP</h1>
+  <p class="lead">Context Stack is the framework. MCP is the access path that lets AI assistants consult it during delivery and assessment.</p>
+
+  <div class="endpoint">https://mcp.context-stack.org/mcp</div>
+
+  <div class="grid">
+    <section class="panel">
+      <h2>What it does</h2>
+      <ul>
+        <li>Exposes the stack overview, glossary, and locked decisions.</li>
+        <li>Routes users to ContextOps, ContextBoundary, Sthala, or Griha.</li>
+        <li>Supports framework discovery, assessment prompts, and delivery guidance.</li>
+        <li>Lets AI assistants ask which governance layer applies before work proceeds.</li>
+      </ul>
+    </section>
+    <section class="panel">
+      <h2>What it does not do</h2>
+      <ul>
+        <li>It does not enforce policy.</li>
+        <li>It does not store prompts or assessment answers.</li>
+        <li>It does not replace gateways, IAM, policy engines, egress controls, or runtime controls.</li>
+        <li>It does not make compliance claims by itself.</li>
+      </ul>
+    </section>
+  </div>
+
+  <h2>Example questions</h2>
+  <ul>
+    <li>Which part of Context Stack applies to stale runbooks after AMS handover?</li>
+    <li>Is this a ContextOps issue, a ContextBoundary issue, or a Sthala issue?</li>
+    <li>What should we assess first for AI context governance?</li>
+    <li>Which governance questions should we ask before an AI workflow calls an external API?</li>
+    <li>Which framework document should a delivery team read first?</li>
+  </ul>
+
+  <h2>JSON-RPC smoke test</h2>
+  <pre><code>curl -X POST https://mcp.context-stack.org/mcp \
+  -H "content-type: application/json" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'</code></pre>
+
+  <h2>Assessment use</h2>
+  <p>Use the MCP endpoint as a framework consultation layer. An AI assistant can ask which stack layer applies, retrieve the right source, and guide a first-pass assessment of context ownership, egress boundaries, runtime placement, and approval paths.</p>
+
+  <p class="note">Enforcement remains deterministic infrastructure work. Agents learn the rules through MCP; gateways, IAM, OPA, egress controls, approval workflows, and runtime controls enforce them.</p>
+</main>
+</body>
+</html>
