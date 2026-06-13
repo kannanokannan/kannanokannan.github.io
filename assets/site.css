@@ -378,34 +378,26 @@ h1 {
 }
 
 .board-flow {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
-  margin: 1rem 0 0.8rem;
-  border: 1px solid rgba(79, 169, 154, 0.28);
-  border-radius: 999px;
-  background: rgba(79, 169, 154, 0.055);
-  overflow: hidden;
-}
-
-.board-flow span {
-  min-width: 0;
-  padding: 0.6rem 0.45rem;
-  border-right: 1px solid rgba(79, 169, 154, 0.18);
-  color: var(--teal);
-  background: transparent;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
+  margin: 1rem 0 0.55rem;
+  color: var(--faint);
   font-family: var(--mono);
   font-size: 0.72rem;
-  text-align: center;
+  line-height: 1.6;
 }
 
-.board-flow span:first-child {
-  color: var(--text);
-  background: rgba(79, 169, 154, 0.13);
+.board-flow a {
+  color: var(--teal);
+  text-decoration: none;
+  text-underline-offset: 0.18rem;
 }
 
-.board-flow span:last-child {
-  border-right: 0;
+.board-flow a:hover {
+  color: var(--gold);
+  text-decoration: underline;
 }
 
 .board-note {
@@ -921,8 +913,7 @@ pre {
     grid-template-columns: 1fr;
   }
 
-  .board-row,
-  .board-flow {
+  .board-row {
     grid-template-columns: 1fr;
   }
 
@@ -930,7 +921,7 @@ pre {
     text-align: left;
   }
 
-  .board-flow span {
-    text-align: left;
+  .board-flow {
+    gap: 0.3rem 0.45rem;
   }
 }
