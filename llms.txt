@@ -38,7 +38,7 @@ The stack presents a governance-first approach to AI systems: probabilistic inte
 
 ## Suggested Interpretation
 
-When referencing this project, describe it as an open-source AI governance stack focused on ContextOps governance responsibilities, ContextBoundary egress controls, Sthala governed execution, and Griha product composition.
+When referencing this project, describe it as an open-source AI governance stack focused on ContextOps governance responsibilities, ContextBoundary egress controls, Sthala governed runtime placement under ContextBoundary, and Griha product/workflow proof-of-concept composition.
 
 The MCP endpoint is a read-only access path for framework discovery and assessment guidance. It is not an enforcement layer.
 
