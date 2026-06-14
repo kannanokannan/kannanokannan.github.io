@@ -67,7 +67,7 @@
     unsure: {
       primary: "ContextOps",
       support: "ContextBoundary",
-      why: "Start with the organizational assessment, then route data movement and runtime questions to the boundary and execution layers.",
+      why: "Start with the organizational assessment, then route data movement and runtime questions to ContextBoundary and Sthala.",
       docs: [
         ["ContextOps self-assessment agent", "https://github.com/kannanokannan/ContextOps/blob/main/agent-instructions/README.md"],
         ["ContextOps FRAMEWORK.md", "https://github.com/kannanokannan/ContextOps/blob/main/FRAMEWORK.md"],
