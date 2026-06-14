@@ -9,6 +9,7 @@ The project is about governed AI systems: context ownership, deployment-agnostic
 - Context Stack landing page and guided assessment: https://context-stack.org/
 - Repository map: https://context-stack.org/repositories.html
 - AI governance concepts: https://context-stack.org/ai-governance.html
+- Public AMS ticket agent use case: https://context-stack.org/use-case-ams-ticket-agent.html
 - MCP access page: https://context-stack.org/mcp/
 - MCP endpoint: https://mcp.context-stack.org/mcp
 

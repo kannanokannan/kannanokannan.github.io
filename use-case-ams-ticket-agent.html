@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMS Ticket Agent Use Case | Context Stack</title>
+<meta name="description" content="Public Context Stack use case for governing an AMS ticket agent with context ownership, egress boundaries, runtime placement, deterministic approval, and audit.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="author" content="Context Stack Project">
+<meta name="keywords" content="AMS ticket agent, AI governance use case, ContextOps, ContextBoundary, Sthala, Griha, ITSM AI governance, deterministic approval">
+<link rel="canonical" href="https://context-stack.org/use-case-ams-ticket-agent.html">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/plain" title="LLM discovery" href="/llms.txt">
+<meta property="og:title" content="AMS Ticket Agent Use Case | Context Stack">
+<meta property="og:description" content="How Context Stack governs an AI-assisted AMS ticket workflow without giving the model execution authority.">
+<meta property="og:url" content="https://context-stack.org/use-case-ams-ticket-agent.html">
+<meta property="og:type" content="article">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "AMS Ticket Agent Use Case",
+  "description": "A public Context Stack use case for governing an AI-assisted AMS ticket workflow.",
+  "url": "https://context-stack.org/use-case-ams-ticket-agent.html",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "Context Stack Project",
+    "url": "https://context-stack.org/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Context Stack Project",
+    "url": "https://context-stack.org/"
+  },
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "keywords": [
+    "AMS ticket agent",
+    "AI governance use case",
+    "ContextOps",
+    "ContextBoundary",
+    "Sthala",
+    "ITSM AI governance"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css?v=20260614">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Context Stack home"><span class="brand-mark"></span>Context Stack</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/#framework">Framework</a>
+    <a href="/ai-governance-framework.html">Guide</a>
+    <a href="/#assessment">Assessment</a>
+    <a href="/#stack">Stack</a>
+    <a href="/mcp/">MCP</a>
+    <a href="/repositories.html">Repositories</a>
+    <a class="nav-emphasis" href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main class="page-narrow">
+  <p class="eyebrow">Public use case</p>
+  <h1 class="page-title">AMS Ticket Agent</h1>
+  <p class="lead">An AI-assisted ticket workflow can summarize incidents, find missing information, propose routing, and prepare proposed responses. It must not close tickets, approve exceptions, change production state, or export restricted data by model judgment alone.</p>
+  <div class="doctrine">Models propose. Deterministic systems validate, approve, execute, and audit.</div>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Problem</p>
+        <h2>AMS work is context-heavy and authority-sensitive.</h2>
+      </div>
+      <p class="section-lede">Support teams need faster triage and better use of historical knowledge, but operational tickets often contain customer data, entitlement context, production history, runbooks, and action paths that carry real business risk.</p>
+    </div>
+    <div class="grid-3">
+      <div class="panel">
+        <h3>Useful assistance</h3>
+        <p>Summarize history, identify missing fields, suggest category and assignment group, retrieve approved knowledge, and prepare a proposed response.</p>
+      </div>
+      <div class="panel">
+        <h3>Risk boundary</h3>
+        <p>The model must not own priority changes, ticket closure, customer commitments, exception approval, or production changes.</p>
+      </div>
+      <div class="panel">
+        <h3>Control goal</h3>
+        <p>Turn AI output into a proposal that passes through context, egress, runtime, approval, and audit controls before action.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Stack mapping</p>
+        <h2>Each project owns a different part of the workflow.</h2>
+      </div>
+      <p class="section-lede">The use case is deliberately split so context governance, data movement, runtime placement, and product workflow are not collapsed into one control layer.</p>
+    </div>
+    <ul class="stack-list">
+      <li>
+        <a href="https://github.com/kannanokannan/ContextOps" target="_blank" rel="noopener">ContextOps</a>
+        <span class="summary">Governed context supply</span>
+        <p class="details">Owns ticket history, approved knowledge, entitlement context, context owner, source provenance, freshness timestamp, and renewal rules for runbooks or playbooks.</p>
+      </li>
+      <li>
+        <a href="https://github.com/kannanokannan/ContextBoundary" target="_blank" rel="noopener">ContextBoundary</a>
+        <span class="summary">Visibility, callability, approval, denial, egress, and audit</span>
+        <p class="details">Governs which fields and tools are visible, which capabilities are callable, which actions need approval, which actions are denied, and which data is constrained before it leaves the boundary.</p>
+      </li>
+      <li>
+        <a href="https://github.com/kannanokannan/Sthala" target="_blank" rel="noopener">Sthala</a>
+        <span class="summary">Governed runtime placement</span>
+        <p class="details">Places the AI runtime under approved boundaries for the ticket context involved. It implements placement; it does not redefine the egress policy.</p>
+      </li>
+      <li>
+        <a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">Griha</a>
+        <span class="summary">Product and workflow proof</span>
+        <p class="details">Can demonstrate the user-facing flow: ticket summary, missing-information checklist, suggested assignment, proposed response, approval step, and audit trail.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Action policy</p>
+        <h2>The model proposes. The workflow decides.</h2>
+      </div>
+      <p class="section-lede">A ticket agent is safe only when the workflow distinguishes low-risk assistance from actions that require deterministic validation or human approval.</p>
+    </div>
+    <div class="boundary">
+      <div class="boundary-card good">
+        <h3>Allowed model work</h3>
+        <ul class="boundary-list">
+          <li>Summarize ticket and interaction history</li>
+          <li>List missing information</li>
+          <li>Propose category and assignment group</li>
+          <li>Retrieve approved knowledge articles</li>
+          <li>Prepare an operator-reviewed response</li>
+        </ul>
+      </div>
+      <div class="boundary-card bad">
+        <h3>Not model authority</h3>
+        <ul class="boundary-list">
+          <li>Close a ticket without workflow approval</li>
+          <li>Change priority without policy validation</li>
+          <li>Send a customer-visible response directly</li>
+          <li>Approve an exception</li>
+          <li>Export restricted ticket data</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Controls</p>
+        <h2>Controls before production authority.</h2>
+      </div>
+      <p class="section-lede">The agent can increase speed without becoming the authority holder. The control path turns generated text into a governed proposal.</p>
+    </div>
+    <div class="flow">
+      <div class="flow-step">
+        <strong>1. Curated context package</strong>
+        ContextOps supplies owned, fresh, traceable ticket and knowledge context.
+      </div>
+      <div class="flow-step">
+        <strong>2. Boundary check</strong>
+        ContextBoundary limits visible fields, callable tools, egress, and action categories.
+      </div>
+      <div class="flow-step">
+        <strong>3. Proposal generation</strong>
+        The model summarizes, extracts, classifies, and proposes the next step.
+      </div>
+      <div class="flow-step">
+        <strong>4. Deterministic validation</strong>
+        Workflow rules, schema checks, dry-run checks, and policy gates validate the proposal.
+      </div>
+      <div class="flow-step">
+        <strong>5. Approval and audit</strong>
+        Human or policy approval owns the final action, and the system records source context, proposal, approver, destination, and final state.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Review questions</p>
+        <h2>Questions before implementation.</h2>
+      </div>
+      <p class="section-lede">These questions help teams decide whether an AMS ticket agent is ready for controlled delivery.</p>
+    </div>
+    <div class="grid-2">
+      <div class="panel">
+        <h3>Context readiness</h3>
+        <ul>
+          <li>Who owns each knowledge source?</li>
+          <li>How is freshness recorded?</li>
+          <li>What happens when a runbook expires?</li>
+          <li>Which sources are advisory rather than authoritative?</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Boundary readiness</h3>
+        <ul>
+          <li>Which ticket fields are visible?</li>
+          <li>Which tools are callable?</li>
+          <li>Which actions require approval?</li>
+          <li>Which destinations are denied for restricted data?</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Runtime readiness</h3>
+        <ul>
+          <li>Where does ticket data run?</li>
+          <li>Which runtime is approved for regulated or customer-sensitive context?</li>
+          <li>How are prompts, retrieved context, and outputs logged?</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Audit readiness</h3>
+        <ul>
+          <li>Can the recommendation be replayed?</li>
+          <li>Is the approving actor recorded?</li>
+          <li>Can rejected proposals be inspected?</li>
+          <li>Can downstream rework be measured?</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Standards alignment</p>
+        <h2>Map the use case to existing governance language.</h2>
+      </div>
+      <p class="section-lede">Context Stack does not replace enterprise frameworks. For AMS, it should sit alongside service management, architecture, security, and audit practices already in use.</p>
+    </div>
+    <div class="grid-3">
+      <div class="panel">
+        <h3>ITIL / ITSM</h3>
+        <p>Incident management, knowledge management, change enablement, approval paths, and operational handover.</p>
+      </div>
+      <div class="panel">
+        <h3>ISO/IEC 20000</h3>
+        <p>Service-management controls, role clarity, service reporting, and continual improvement evidence.</p>
+      </div>
+      <div class="panel">
+        <h3>Security and audit</h3>
+        <p>IAM alignment, data minimization, logging, access review, egress constraints, and exception handling.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Read next</p>
+        <h2>Source references</h2>
+      </div>
+      <p class="section-lede">Use these sources to move from the example into the framework.</p>
+    </div>
+    <div class="grid-3">
+      <div class="panel">
+        <h3>Guided assessment</h3>
+        <p><a href="/#assessment">Start the homepage assessment</a></p>
+      </div>
+      <div class="panel">
+        <h3>Framework guide</h3>
+        <p><a href="/ai-governance-framework.html">Read the AI governance guide</a></p>
+      </div>
+      <div class="panel">
+        <h3>Repository map</h3>
+        <p><a href="/repositories.html">Open the source repositories</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-note">Apache 2.0. Open-source AI governance framework.</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/#framework">Framework</a>
+      <a href="/ai-governance-framework.html">Guide</a>
+      <a href="/use-case-ams-ticket-agent.html">AMS use case</a>
+      <a href="/#assessment">Assessment</a>
+      <a href="/mcp/">MCP</a>
+      <a href="/repositories.html">Repositories</a>
+      <a href="/ai-governance.html">Concepts</a>
+      <a href="/llms.txt">llms.txt</a>
+      <a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
