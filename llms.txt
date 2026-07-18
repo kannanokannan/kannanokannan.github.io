@@ -22,7 +22,7 @@ The project is about governed AI systems: context ownership, deployment-agnostic
   Deployment-agnostic egress governance specification. Defines Egress Tier controls, MCP discovery filtering, capability visibility, invocation control, approval workflows, egress control, and auditing.
 
 - Sthala: https://github.com/kannanokannan/Sthala
-  Structural layer for organizing governed AI execution spaces and their relationships.
+  Governed runtime placement under ContextBoundary — decides where AI execution runs (cloud, on-prem, hybrid, edge) so the egress contract is honored. A governed runtime reference, not a separate stack layer.
 
 - Griha: https://github.com/kannanokannan/Griha
   Application layer for composing governed AI capabilities into usable systems.
