@@ -125,7 +125,7 @@
       <li>
         <a href="https://github.com/kannanokannan/Sthala" target="_blank" rel="noopener">Sthala</a>
         <span class="summary">Where does the AI actually run?</span>
-        <p class="details">Use this for governed AI runtime placement under ContextBoundary, runtime constraints, and approved egress boundaries.</p>
+        <p class="details">Use this for governed AI runtime placement under ContextBoundary, runtime constraints, and defined egress boundaries.</p>
       </li>
       <li>
         <a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">Griha</a>
@@ -133,6 +133,37 @@
         <p class="details">Use this for the product and adoption layer that makes governed AI usable in workflow.</p>
       </li>
     </ul>
+  </section>
+
+  <section class="section" id="standards-alignment">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Standards alignment</p>
+        <h2>Aligned with AARM v1.0, and precise about what that means.</h2>
+      </div>
+      <p class="section-lede">The Cloud Security Alliance's AARM v1.0 is the open standard for runtime agent action authorization. ContextBoundary maps to its Protocol Gateway architecture as a strict-determinism profile.</p>
+    </div>
+    <div class="panel">
+      <p>AARM-aligned strict-determinism profile — all Core requirements (R1–R6) implemented and CI-verified; independent conformance review not yet undertaken.</p>
+      <p>All Core requirements (R1–R6) are implemented and CI-verified in the reference gateway: pre-execution interception, session context, owner-declared narrowing-only intent envelopes, all five decisions including MODIFY and DEFER, tamper-evident sealed receipts, and per-agent Ed25519 identity with public-key verification. R8 OpenTelemetry export is implemented. R7 is a designed deterministic divergence — envelope-drift counting rather than semantic-distance tracking — chosen to keep any model out of the enforcement path.</p>
+      <p>Production operation and external evidence review are both prerequisites before any conformance claim, and none is made here.</p>
+      <p>The gateway is a reference implementation, verifiable from a clean clone. It is not a hosted service.</p>
+      <p>AARM specifies action authorization. It does not specify data sovereignty or vendor continuity. Those extensions — egress tiers, vendor and jurisdiction zones, audit profiles, and continuity controls — are ContextBoundary's contribution.</p>
+    </div>
+    <div class="grid-3">
+      <div class="panel">
+        <h3>AARM gap analysis</h3>
+        <p><a href="https://github.com/kannanokannan/ContextBoundary/blob/main/aarm-conformance-gap-analysis_v1.0.md" target="_blank" rel="noopener">Open analysis</a></p>
+      </div>
+      <div class="panel">
+        <h3>Runtime maturity ladder</h3>
+        <p><a href="https://github.com/kannanokannan/ContextBoundary/blob/main/maturity-ladder.md" target="_blank" rel="noopener">Open ladder</a></p>
+      </div>
+      <div class="panel">
+        <h3>Reference gateway</h3>
+        <p><a href="https://github.com/kannanokannan/contextboundary-gw" target="_blank" rel="noopener">Open gateway</a></p>
+      </div>
+    </div>
   </section>
 
   <section class="section">
