@@ -86,6 +86,7 @@
       item.setAttribute("aria-pressed", item === button ? "true" : "false");
     });
 
+    resetAdvisor();
     renderResult();
   }
 
@@ -147,6 +148,83 @@
     done();
   }
 
+  function resetAdvisor() {
+    const result = document.querySelector("[data-advisor-result]");
+    const status = document.querySelector("[data-advisor-status]");
+    if (result) result.hidden = true;
+    if (status) status.textContent = "";
+  }
+
+  function renderAdvisor(body, route) {
+    const result = document.querySelector("[data-advisor-result]");
+    const routeList = document.querySelector("[data-advisor-route]");
+    const explanation = document.querySelector("[data-advisor-explanation]");
+    const caveats = document.querySelector("[data-advisor-caveats]");
+    const sources = document.querySelector("[data-advisor-sources]");
+    const provenance = document.querySelector("[data-advisor-provenance]");
+    if (!result || !routeList || !explanation || !caveats || !sources || !provenance) return;
+
+    if (!body.ok || body.route?.primary !== route.primary || body.route?.support !== route.support) {
+      result.hidden = true;
+      return;
+    }
+
+    routeList.innerHTML = "";
+    [["Primary layer", route.primary], ["Supporting layer", route.support]].forEach(([label, value]) => {
+      const item = document.createElement("li");
+      item.textContent = `${label}: ${value}`;
+      routeList.appendChild(item);
+    });
+    explanation.textContent = body.explanation;
+    caveats.innerHTML = "";
+    (body.caveats || []).forEach((value) => {
+      const item = document.createElement("li");
+      item.textContent = value;
+      caveats.appendChild(item);
+    });
+    sources.innerHTML = "";
+    (body.sources || []).forEach((value) => {
+      const item = document.createElement("li");
+      item.textContent = value;
+      sources.appendChild(item);
+    });
+    provenance.textContent = `Model: ${body.provenance.model_id}; application revision: ${body.provenance.application_revision}; Worker version: ${body.provenance.worker_version_id}.`;
+    result.hidden = false;
+  }
+
+  async function explainRoute() {
+    const question = document.querySelector("[data-advisor-question]");
+    const status = document.querySelector("[data-advisor-status]");
+    if (!question || !status) return;
+    const route = routes[state.problem || "unsure"];
+    const text = question.value.trim();
+    if (!text) {
+      status.textContent = "Enter a question for the explanation layer.";
+      return;
+    }
+
+    status.textContent = "Requesting a model-generated explanation...";
+    try {
+      const endpoint = window.CONTEXT_STACK_ADVISOR_ENDPOINT || "https://mcp.context-stack.org/advisor";
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ routeKey: state.problem || "unsure", question: text })
+      });
+      const body = await response.json();
+      if (!body.ok) {
+        status.textContent = body.error?.message || "The explanation layer returned no prose.";
+        resetAdvisor();
+        return;
+      }
+      renderAdvisor(body, route);
+      status.textContent = "Explanation received.";
+    } catch {
+      resetAdvisor();
+      status.textContent = "The explanation layer is unavailable.";
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-choice]").forEach((button) => {
       button.addEventListener("click", () => selectChoice(button));
@@ -154,6 +232,9 @@
 
     const copy = document.querySelector("[data-copy-prompt]");
     if (copy) copy.addEventListener("click", copyPrompt);
+
+    const advisorSubmit = document.querySelector("[data-advisor-submit]");
+    if (advisorSubmit) advisorSubmit.addEventListener("click", explainRoute);
 
     renderResult();
   });

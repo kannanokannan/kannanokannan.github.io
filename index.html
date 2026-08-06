@@ -239,6 +239,24 @@
         <textarea class="prompt-box" data-result-prompt readonly></textarea>
         <button class="button" type="button" data-copy-prompt>Copy prompt</button>
         <div class="copy-status" data-copy-status></div>
+        <p class="result-label">Optional explanation</p>
+        <p class="text-muted">Responses are model-generated guidance based only on public Context Stack documents. Guidance, not enforcement; not a compliance or legal opinion. Your question is sent to Cloudflare Workers AI for processing; it is not stored, not logged, and not used to train any model.</p>
+        <p class="result-label">Model</p>
+        <p class="text-muted" data-advisor-model>@cf/meta/llama-3.1-8b-instruct-fast</p>
+        <label class="question-title" for="advisor-question">Question for the explanation layer</label>
+        <textarea class="prompt-box" id="advisor-question" data-advisor-question maxlength="4000" placeholder="Ask for an explanation of the route and documents."></textarea>
+        <button class="button" type="button" data-advisor-submit>Explain this route</button>
+        <div class="copy-status" data-advisor-status></div>
+        <div data-advisor-result hidden>
+          <p class="result-label">Deterministic route</p>
+          <ul class="result-list" data-advisor-route></ul>
+          <p class="result-label">Model-generated explanation</p>
+          <p class="result-text" data-advisor-explanation></p>
+          <ul class="result-list" data-advisor-caveats></ul>
+          <p class="result-label">Sources</p>
+          <ul class="result-list" data-advisor-sources></ul>
+          <p class="text-muted" data-advisor-provenance></p>
+        </div>
       </aside>
     </div>
   </section>
