@@ -21,6 +21,9 @@ The project is about governed AI systems: context ownership, deployment-agnostic
 - ContextBoundary: https://github.com/kannanokannan/ContextBoundary
   Deployment-agnostic egress governance specification. Defines Egress Tier controls, MCP discovery filtering, capability visibility, invocation control, approval workflows, egress control, and auditing.
 
+- contextboundary-gw: https://github.com/kannanokannan/contextboundary-gw
+  Reference gateway implementing ContextBoundary. Deterministic MCP interception with compiled-policy evaluation, sealed audit receipts, and a conformance suite runnable from a clean clone.
+
 - Sthala: https://github.com/kannanokannan/Sthala
   Governed runtime placement under ContextBoundary — decides where AI execution runs (cloud, on-prem, hybrid, edge) so the egress contract is honored. A governed runtime reference, not a separate stack layer.
 
