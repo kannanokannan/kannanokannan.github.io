@@ -105,12 +105,13 @@
 <main class="page">
   <section class="hero" id="framework">
     <div>
-      <p class="eyebrow">Open-source AI governance framework</p>
+      <p class="eyebrow">Open source · Apache-2.0 · Deterministic agent governance</p>
       <h1>Context Stack</h1>
-      <p class="hero-lede">Open-source AI governance framework for context ownership, data egress, runtime placement, and governed delivery.</p>
+      <p class="hero-lede">The deterministic harness for AI agents. Context Stack governs what an agent may discover, invoke, and send — with enforcement outside the model, and a sealed receipt for every decision.</p>
       <div class="doctrine">Probabilistic intelligence must operate inside deterministic governance boundaries.</div>
       <div class="cta-row">
-        <a class="button button-primary" href="#assessment">Start assessment</a>
+        <a class="button button-primary" href="https://github.com/kannanokannan/contextboundary-gw" target="_blank" rel="noopener">Reference gateway</a>
+        <a class="button" href="#assessment">Start assessment</a>
         <a class="button" href="/mcp/">Use through MCP</a>
       </div>
     </div>
@@ -152,6 +153,21 @@
         <p class="board-note">MCP access path: framework guidance inside workflow</p>
       </div>
     </aside>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Reference gateway</p>
+        <h2>Run the proof from a clean clone.</h2>
+      </div>
+      <p class="section-lede">Don't take it on trust. The reference gateway is open source. Clone it, install, set two throwaway environment variables, and run 21 conformance scenarios against a live local gateway — about ten minutes.</p>
+    </div>
+    <div class="panel">
+      <p>The suite has 21 scenarios, zero expected-fail, and a green CI gate. Decisions are made by compiled policy (OPA/WASM), never by a model, and every decision emits a sealed, tamper-evident Ed25519 receipt.</p>
+      <p>Apache-2.0, open source, no account, no signup. AARM-aligned strict-determinism profile — all Core requirements (R1–R6) implemented and CI-verified; independent conformance review not yet undertaken.</p>
+      <p><a href="https://github.com/kannanokannan/contextboundary-gw" target="_blank" rel="noopener">Read the reference gateway</a></p>
+    </div>
   </section>
 
   <section class="section">
@@ -264,7 +280,7 @@
       <div class="panel">
         <span class="tag">2</span>
         <h3>Map</h3>
-        <p>Route the issue to ContextOps, ContextBoundary, Sthala, or Griha instead of treating every AI problem as one blob.</p>
+        <p>Route the issue to ContextOps, ContextBoundary, or Sthala; use Griha as a worked example of governed AI capabilities composed into a running system.</p>
       </div>
       <div class="panel">
         <span class="tag">3</span>
@@ -333,8 +349,8 @@
       </li>
       <li>
         <a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">Griha</a>
-        <span class="summary">How does governed AI become usable?</span>
-        <p class="details">Product and adoption layer that composes governed AI capabilities into practical workflows.</p>
+        <span class="summary">How do governed AI capabilities become a running system?</span>
+        <p class="details">Worked example of governed AI capabilities composed into a running system, with executable policy behind it.</p>
       </li>
     </ul>
     <p class="section-lede">ContextBoundary's reference gateway is an AARM-aligned strict-determinism profile — all Core requirements (R1–R6) implemented and CI-verified; independent conformance review not yet undertaken. It is verifiable from a clean clone, not a hosted service; <a href="/ai-governance-framework.html#standards-alignment">read the standards alignment</a>.</p>
