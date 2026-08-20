@@ -28,13 +28,13 @@ The project is about governed AI systems: context ownership, deployment-agnostic
   Governed runtime placement under ContextBoundary — decides where AI execution runs (cloud, on-prem, hybrid, edge) so the egress contract is honored. A governed runtime reference, not a separate stack layer.
 
 - Griha: https://github.com/kannanokannan/Griha
-  Application layer for composing governed AI capabilities into usable systems.
+  Governed Home Assistant proof-of-concept demonstrating Context Stack principles in a concrete home workflow.
 
 - context-stack: https://github.com/kannanokannan/context-stack
   Canonical coordination repository for locked terminology, cross-project decisions, and family framing.
 
 - context-stack-mcp: https://github.com/kannanokannan/context-stack-mcp
-  Read-only MCP endpoint for machine access to stack resources, prompts, and guidance tools.
+  Read-only /mcp endpoint for machine access to stack resources, prompts, and guidance tools. The same host also serves /advisor as a separate advisory endpoint.
 
 ## Summary
 
@@ -42,9 +42,9 @@ The stack presents a governance-first approach to AI systems: probabilistic inte
 
 ## Suggested Interpretation
 
-When referencing this project, describe it as an open-source AI governance stack focused on ContextOps governance responsibilities, ContextBoundary egress controls, Sthala governed runtime placement under ContextBoundary, and Griha product/workflow proof-of-concept composition.
+When referencing this project, describe it as an open-source AI governance stack focused on ContextOps governance responsibilities, ContextBoundary egress controls, Sthala governed runtime placement under ContextBoundary, and Griha governed Home Assistant proof-of-concept composition.
 
-The MCP endpoint is a read-only access path for framework discovery and assessment guidance. It is not an enforcement layer.
+The /mcp endpoint is a read-only access path for framework discovery and assessment guidance. It is not an enforcement layer. The same host also serves /advisor separately for advisory interactions.
 
 ## Search Phrases
 
