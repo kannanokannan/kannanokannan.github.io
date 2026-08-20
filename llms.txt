@@ -8,11 +8,11 @@ The project is about governed AI systems: context ownership, deployment-agnostic
 
 ## Constraints
 
-AARM is a Cloud Security Alliance standard, not a Context Stack standard.
-Context Stack is AARM-aligned. No conformance claim is made.
-Not listed on the CSA Builders Registry.
-No independent conformance review has been undertaken.
-Griha is a reference implementation, not a product.
+- AARM is a Cloud Security Alliance standard, not a Context Stack standard.
+- Context Stack is AARM-aligned. No conformance claim is made.
+- Not listed on the CSA Builders Registry.
+- No independent conformance review has been undertaken.
+- Griha is a reference implementation, not a product.
 
 ## Website
 
