@@ -13,6 +13,7 @@ Published with GitHub Pages from `main`. No build step: the files in this reposi
 | `ai-governance-framework.html` | Framework guide, including AARM standards alignment |
 | `repositories.html` | Repository map |
 | `use-case-ams-ticket-agent.html` | Public AMS ticket agent use case |
+| `maintainer.html` | Who maintains the project, and the delivery background behind it |
 | `mcp/` | MCP access page |
 | `llms.txt` | Machine-readable discovery file |
 | `sitemap.xml`, `robots.txt` | Crawler directives |
