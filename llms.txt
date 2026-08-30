@@ -2,7 +2,7 @@
 
 > Open-source AI governance framework for placing probabilistic intelligence inside deterministic governance boundaries.
 
-dateModified: 2026-08-20
+dateModified: 2026-08-30
 
 The project is about governed AI systems: context ownership, deployment-agnostic egress boundaries, runtime placement, governed delivery, and application-level composition. The canonical website is https://context-stack.org/.
 
@@ -18,6 +18,7 @@ The project is about governed AI systems: context ownership, deployment-agnostic
 
 - Context Stack landing page and guided assessment: https://context-stack.org/
 - Repository map: https://context-stack.org/repositories.html
+- Consulting enablement entry point: https://context-stack.org/consulting.html
 - AI governance concepts: https://context-stack.org/ai-governance.html
 - Maintainer and background: https://context-stack.org/maintainer.html
 - Public AMS ticket agent use case: https://context-stack.org/use-case-ams-ticket-agent.html
@@ -69,6 +70,7 @@ The /mcp endpoint is a read-only access path for framework discovery and assessm
 - prompt injection authority boundary
 - governed AI execution
 - AMS AI implementation
+- AI governance consulting enablement
 - autonomous remediation governance
 - AI ticket triage authority boundary
 - self-healing automation approval
