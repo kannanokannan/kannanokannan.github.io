@@ -41,6 +41,7 @@ CONSTRAINTS = [
 CONSTRAINT_SURFACES = [
     "index.html",
     "ai-governance.html",
+    "ai-governance-framework.html",
     "consulting.html",
     "llms.txt",
     "README.md",
