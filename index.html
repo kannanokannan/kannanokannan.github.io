@@ -207,47 +207,71 @@
       <p class="hero-lede">The deterministic harness for AI agents. Context Stack governs what an agent may discover, invoke, and send — with enforcement outside the model, and a sealed receipt for every decision.</p>
       <div class="doctrine">Probabilistic intelligence must operate inside deterministic governance boundaries.</div>
       <div class="cta-row">
-        <a class="button button-primary" href="https://github.com/kannanokannan/contextboundary-gw" target="_blank" rel="noopener">Reference gateway</a>
+        <a class="button button-primary" href="https://github.com/kannanokannan/contextboundary-gw" target="_blank" rel="noopener">Run the proof</a>
         <a class="button" href="#assessment">Start assessment</a>
         <a class="button" href="/mcp/">Use through MCP</a>
       </div>
     </div>
-    <aside class="hero-board" aria-label="AI delivery governance map">
+    <aside class="hero-board" aria-label="Verified sealed decision receipt">
       <div class="board-surface">
-        <p class="board-label">Governance board</p>
-        <h2>AI work is entering delivery before governance has caught up.</h2>
-        <p class="board-subtitle">Four questions before operational authority</p>
+        <p class="board-label">Sealed decision receipt</p>
+        <h2>Approval stopped the agent before change.</h2>
+        <p class="board-subtitle">Verified locally: <code>valid: true</code> · <code>code: intact</code> · <code>event_count: 3</code></p>
 
-        <div class="board-map">
-          <div class="board-row">
-            <span>Who owns context?</span>
-            <strong>ContextOps</strong>
+        <div class="receipt-panel">
+          <div class="receipt-status">
+            <span>decision</span>
+            <strong>approve</strong>
           </div>
-          <div class="board-row">
-            <span>Where may data go?</span>
-            <strong>ContextBoundary</strong>
-          </div>
-          <div class="board-row">
-            <span>Where does AI run?</span>
-            <strong>Sthala</strong>
-          </div>
-          <div class="board-row">
-            <span>Who approves action?</span>
-            <strong>ContextBoundary</strong>
-          </div>
+          <dl class="receipt-grid">
+            <div>
+              <dt>rule_id</dt>
+              <dd>R3</dd>
+            </div>
+            <div>
+              <dt>reason</dt>
+              <dd>tier_escalation</dd>
+            </div>
+            <div>
+              <dt>capability</dt>
+              <dd>apply-change</dd>
+            </div>
+            <div>
+              <dt>agent_id</dt>
+              <dd>agent:run-l1</dd>
+            </div>
+            <div>
+              <dt>accountable_owner</dt>
+              <dd>role:run-lead-apac</dd>
+            </div>
+            <div>
+              <dt>tier_in_force</dt>
+              <dd>T1</dd>
+            </div>
+            <div>
+              <dt>obligation</dt>
+              <dd>approval_required: true · approver_role: role:run-lead-apac</dd>
+            </div>
+            <div>
+              <dt>policy_hash</dt>
+              <dd title="8ec5c23a6a20b00c9b7861ce756c838287b9307fc1a972f684f24806502c7188">8ec5c23a…502c7188</dd>
+            </div>
+            <div>
+              <dt>event_hash</dt>
+              <dd title="66a14a2503e300ae3f8c6d8ecfe2b3911f85c4cadf68ff4c8ab520d8afc4c5a8">66a14a25…afc4c5a8</dd>
+            </div>
+            <div>
+              <dt>hash_alg</dt>
+              <dd>sha-256</dd>
+            </div>
+            <div>
+              <dt>timestamp</dt>
+              <dd>2026-07-26T16:18:23.450Z</dd>
+            </div>
+          </dl>
         </div>
 
-        <p class="board-flow" aria-label="Framework operating path">
-          <span>Operating path:</span>
-          <a href="#assessment">Assess</a>
-          <span aria-hidden="true">&rarr;</span>
-          <a href="#stack">Route</a>
-          <span aria-hidden="true">&rarr;</span>
-          <a href="#how-teams-use-it">Apply</a>
-          <span aria-hidden="true">&rarr;</span>
-          <a href="/mcp/">Operate</a>
-        </p>
-        <p class="board-note">MCP access path: framework guidance inside workflow</p>
+        <p class="receipt-note">Verified locally from the reference gateway's AMS example — ephemeral test keys, example policy. Verify it yourself: <code>node audit/verify-receipt.mjs …</code></p>
       </div>
     </aside>
   </section>
@@ -258,10 +282,10 @@
         <p class="eyebrow">Reference gateway</p>
         <h2>Run the proof from a clean clone.</h2>
       </div>
-      <p class="section-lede">Don't take it on trust. The reference gateway is open source. Clone it, install, set two throwaway environment variables, and run 21 conformance scenarios against a live local gateway — about ten minutes.</p>
+      <p class="section-lede">Don't take it on trust. The reference gateway is open source. Clone it, install, set two throwaway environment variables, and run 22 conformance scenarios against a live local gateway — about ten minutes.</p>
     </div>
     <div class="panel">
-      <p>The suite has 21 scenarios, zero expected-fail, and a green CI gate. Decisions are made by compiled policy (OPA/WASM), never by a model, and every decision emits a sealed, tamper-evident Ed25519 receipt.</p>
+      <p>The suite has 22 scenarios, zero expected-fail, and a green CI gate. Decisions are made by compiled policy (OPA/WASM), never by a model, and every decision emits a sealed, tamper-evident Ed25519 receipt.</p>
       <p>Apache-2.0, open source, no account, no signup. AARM-aligned strict-determinism profile — all Core requirements (R1–R6) implemented and CI-verified; independent conformance review not yet undertaken.</p>
       <p><a href="https://github.com/kannanokannan/contextboundary-gw" target="_blank" rel="noopener">Read the reference gateway</a></p>
     </div>
@@ -306,6 +330,39 @@
         <h2>Start with a three-question assessment.</h2>
       </div>
       <p class="section-lede">No login, no tracking, no stored answers. The wizard routes the problem to the right part of the framework and gives you a prompt you can use through MCP or any AI assistant.</p>
+    </div>
+
+    <div class="assessment-map" aria-label="AI delivery governance map">
+      <p class="board-subtitle">Four questions before operational authority</p>
+      <div class="board-map">
+        <div class="board-row">
+          <span>Who owns context?</span>
+          <strong>ContextOps</strong>
+        </div>
+        <div class="board-row">
+          <span>Where may data go?</span>
+          <strong>ContextBoundary</strong>
+        </div>
+        <div class="board-row">
+          <span>Where does AI run?</span>
+          <strong>Sthala</strong>
+        </div>
+        <div class="board-row">
+          <span>Who approves action?</span>
+          <strong>ContextBoundary</strong>
+        </div>
+      </div>
+
+      <p class="board-flow" aria-label="Framework operating path">
+        <span>Operating path:</span>
+        <a href="#assessment">Assess</a>
+        <span aria-hidden="true">&rarr;</span>
+        <a href="#stack">Route</a>
+        <span aria-hidden="true">&rarr;</span>
+        <a href="#how-teams-use-it">Apply</a>
+        <span aria-hidden="true">&rarr;</span>
+        <a href="/mcp/">Operate</a>
+      </p>
     </div>
 
     <div class="wizard">
@@ -470,6 +527,11 @@
           <li>Tool, API, or system action follows model output</li>
           <li>Review and audit are reconstructed later</li>
         </ul>
+      </div>
+      <div class="boundary-divider" role="separator" aria-label="Boundary from probabilistic interpretation to deterministic authorization">
+        <span>probabilistic</span>
+        <strong>deterministic boundary</strong>
+        <span>deterministic</span>
       </div>
       <div class="boundary-card good">
         <h3>Context Stack flow</h3>
