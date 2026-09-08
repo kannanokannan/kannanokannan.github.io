@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consulting Enablement | Context Stack</title>
-<meta name="description" content="ContextBoundary consulting enablement materials for discovery workshops, egress assessment, contract review, stakeholder alignment, demonstration, and executive readout.">
+<title>AI Boundary Assessment Practice | Context Stack</title>
+<meta name="description" content="Practitioner kit for assessing where an organisation's AI agents may send data: three time-boxed engagement shapes, a statement-of-work skeleton, a scoring worksheet, and a demonstration guide. For services firms and internal architecture teams.">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <meta name="author" content="Context Stack Project">
-<meta name="keywords" content="ContextBoundary consulting, AI governance consulting enablement, egress assessment, AI boundary workshop, vendor contract review, stakeholder approval playbook">
+<meta name="keywords" content="AI boundary assessment, AI governance practitioner kit, egress assessment, engagement shapes, statement of work, scoring worksheet, vendor contract review, stakeholder approval playbook">
 <link rel="canonical" href="https://context-stack.org/consulting.html">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="alternate" type="text/plain" title="LLM discovery" href="/llms.txt">
-<meta property="og:title" content="Consulting Enablement | Context Stack">
-<meta property="og:description" content="Discovery, assessment, demonstration, contract review, stakeholder alignment, and executive readout materials for ContextBoundary consulting work.">
+<meta property="og:title" content="AI Boundary Assessment Practice | Context Stack">
+<meta property="og:description" content="Three time-boxed engagement shapes, a SOW skeleton, a scoring worksheet, and a demonstration guide for practitioners assessing AI egress boundaries.">
 <meta property="og:image" content="https://context-stack.org/hero.png">
 <meta property="og:url" content="https://context-stack.org/consulting.html">
 <meta property="og:type" content="article">
@@ -22,8 +22,8 @@
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "ContextBoundary Consulting Enablement",
-  "description": "Enablement materials for using ContextBoundary in AI egress governance discovery, assessment, contract review, demonstration, and executive reporting.",
+  "headline": "AI Boundary Assessment Practice — Practitioner Kit",
+  "description": "Engagement shapes, statement-of-work skeleton, scoring worksheet, and demonstration guide for practitioners assessing and remediating AI egress boundaries with ContextBoundary.",
   "url": "https://context-stack.org/consulting.html",
   "disambiguatingDescription": "Context Stack is AARM-aligned. No conformance claim is made. AARM is a Cloud Security Alliance standard, not a Context Stack standard.",
   "inLanguage": "en",
@@ -39,8 +39,9 @@
   },
   "license": "https://www.apache.org/licenses/LICENSE-2.0",
   "keywords": [
-    "AI governance consulting",
+    "AI boundary assessment",
     "ContextBoundary",
+    "engagement shapes",
     "egress assessment",
     "vendor contract review",
     "stakeholder approval"
@@ -68,32 +69,60 @@
 </header>
 
 <main class="page-narrow">
-  <p class="eyebrow">Consulting enablement</p>
-  <h1 class="page-title">ContextBoundary consulting package</h1>
-  <p class="lead">Use these materials to run discovery, assess AI egress maturity, review vendor contracts, align stakeholders, demonstrate the reference gateway, and prepare executive readouts.</p>
+  <p class="eyebrow">For practitioners</p>
+  <h1 class="page-title">AI boundary assessment practice</h1>
+  <p class="lead">Materials for architects and advisers who need to establish where an organisation's AI agents may send data, show what enforcement looks like, and report it to executives. Written for services firms and internal architecture teams to run. Nothing here is sold.</p>
   <div class="doctrine">The engagement can now show the control, not only assess the gap.</div>
 
   <section class="section">
     <div class="section-head">
       <div>
-        <p class="eyebrow">Use</p>
-        <h2>From assessment to demonstration.</h2>
+        <p class="eyebrow">Shapes</p>
+        <h2>Three shapes, all time-boxed.</h2>
       </div>
-      <p class="section-lede">The package turns the ContextBoundary specification into repeatable consulting artifacts while keeping claim limits explicit.</p>
+      <p class="section-lede">Duration, effort in person-days, team, client dependencies, deliverables, and what "done" means are fixed per shape. Prices are not: the delivering firm sets its own.</p>
     </div>
     <div class="grid-3">
       <div class="panel">
-        <h3>Discovery</h3>
-        <p>Workshop prompts surface AI workloads, context sources, vendors, Boundary Zones, Egress Tiers, approval paths, and missing evidence.</p>
+        <h3>Discovery workshop</h3>
+        <p>One day. About three person-days including preparation and write-up. Delivers the AI Boundary Topology Map, the crossing inventory, and the five highest-risk gaps.</p>
       </div>
       <div class="panel">
-        <h3>Assessment</h3>
-        <p>The egress assessment scores organizational maturity separately from runtime enforcement configuration.</p>
+        <h3>Boundary assessment</h3>
+        <p>Three weeks. About twenty person-days. All six phases: discovery, evidence, scoring, contract review, roadmap, executive readout. Every score cites evidence.</p>
       </div>
       <div class="panel">
         <h3>Demonstration</h3>
-        <p>The demonstration guide shows how to run the reference gateway and inspect a boundary decision and receipt.</p>
+        <p>Half a day. About one person-day including the same-day rehearsal. Twenty-two conformance scenarios green in the room, one denial shown, one receipt opened.</p>
       </div>
+    </div>
+    <p class="text-muted">Entry criteria and when to decline are in <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/engagement-shapes.md" target="_blank" rel="noopener">Engagement Shapes</a>. Declining is a normal outcome.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Start</p>
+        <h2>Run it in this order.</h2>
+      </div>
+      <p class="section-lede">Nothing to install beyond the reference gateway, nothing to sign up for. The kit is Apache-2.0 and lives in the ContextBoundary repository.</p>
+    </div>
+    <div class="grid-3">
+      <div class="panel">
+        <h3>1. Run the proof</h3>
+        <p>Clone <code>contextboundary-gw</code> and run the conformance suite yourself before you show it to anyone. About ten minutes from a clean clone.</p>
+      </div>
+      <div class="panel">
+        <h3>2. Run the workshop</h3>
+        <p>Use the workshop agenda and send the scoring worksheet's evidence request in week one. Score nothing without evidence.</p>
+      </div>
+      <div class="panel">
+        <h3>3. Write the readout</h3>
+        <p>Carry the worksheet's summary table into the executive readout template unchanged. Name the decisions the executives must make.</p>
+      </div>
+    </div>
+    <div class="panel panel-strong">
+      <p>Questions from practitioners: open an issue on <a href="https://github.com/kannanokannan/ContextBoundary/issues" target="_blank" rel="noopener">ContextBoundary</a> with the label <code>engagement</code>. Say which shape, which phase, and what the room asked that the kit did not answer.</p>
     </div>
   </section>
 
@@ -101,30 +130,50 @@
     <div class="section-head">
       <div>
         <p class="eyebrow">Materials</p>
-        <h2>Read the package in ContextBoundary.</h2>
+        <h2>Read the kit at source.</h2>
       </div>
-      <p class="section-lede">The source of truth is the open repository. The website is the public doorway, not a second copy of the consulting material.</p>
+      <p class="section-lede">The source of truth is the open repository. The website is the public doorway, not a second copy of the material.</p>
     </div>
     <ul class="repo-list">
       <li>
-        <a href="https://github.com/kannanokannan/ContextBoundary/tree/main/consulting" target="_blank" rel="noopener">Consulting package</a>
+        <a href="https://github.com/kannanokannan/ContextBoundary/tree/main/consulting" target="_blank" rel="noopener">Practitioner kit</a>
         <span class="summary">Complete folder</span>
-        <p class="details">Entry point for all ContextBoundary consulting enablement documents.</p>
+        <p class="details">Entry point. The README carries the claim limits that govern every document.</p>
+      </li>
+      <li>
+        <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/engagement-shapes.md" target="_blank" rel="noopener">Engagement Shapes</a>
+        <span class="summary">Scope and effort</span>
+        <p class="details">The three shapes: duration, effort, team, deliverables, acceptance, entry criteria, when to decline.</p>
+      </li>
+      <li>
+        <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/sow-skeleton.md" target="_blank" rel="noopener">SOW Skeleton</a>
+        <span class="summary">Statement of work</span>
+        <p class="details">Fill-in template built on the shapes. Its fixed sections carry the claim limits into the contract.</p>
+      </li>
+      <li>
+        <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/scoring-worksheet.md" target="_blank" rel="noopener">Scoring Worksheet</a>
+        <span class="summary">Working instrument</span>
+        <p class="details">Interview questions, evidence request, scoring anchors per category, and the summary table that feeds the readout.</p>
+      </li>
+      <li>
+        <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/workshop-agenda.md" target="_blank" rel="noopener">Workshop Agenda</a>
+        <span class="summary">Discovery runbook</span>
+        <p class="details">Participants, pre-workshop inputs, and the six-step agenda that produces the topology map.</p>
       </li>
       <li>
         <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/egress-assessment.md" target="_blank" rel="noopener">Egress Assessment</a>
-        <span class="summary">Maturity scoring</span>
-        <p class="details">Assessment categories, evidence requests, outputs, and interpretation guardrails.</p>
+        <span class="summary">Maturity model</span>
+        <p class="details">Five maturity levels and six scoring categories. Organisational maturity is scored separately from runtime configuration.</p>
       </li>
       <li>
         <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/demonstration-guide.md" target="_blank" rel="noopener">Demonstration Guide</a>
         <span class="summary">Show the control</span>
-        <p class="details">How to demonstrate the reference gateway without treating it as a product or compliance certification.</p>
+        <p class="details">How to demonstrate the reference gateway without treating it as a product or a compliance certificate.</p>
       </li>
       <li>
         <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/cloud-act-contract-checklist.md" target="_blank" rel="noopener">CLOUD Act Contract Checklist</a>
         <span class="summary">Contract review</span>
-        <p class="details">Prompts for reviewing whether vendor contracts support the technical boundary.</p>
+        <p class="details">Prompts for reviewing whether vendor contracts support the technical boundary. Frames questions for counsel; does not replace counsel.</p>
       </li>
       <li>
         <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/stakeholder-playbook.md" target="_blank" rel="noopener">Stakeholder Playbook</a>
@@ -134,7 +183,12 @@
       <li>
         <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/executive-readout-template.md" target="_blank" rel="noopener">Executive Readout Template</a>
         <span class="summary">Board-level summary</span>
-        <p class="details">Structure for translating findings into risk, investment priorities, and next decisions.</p>
+        <p class="details">Structure for translating findings into risk, investment priorities, and the decisions executives must make.</p>
+      </li>
+      <li>
+        <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/case-study-decision-without-a-receipt.md" target="_blank" rel="noopener">Case Study: A Decision Without a Receipt</a>
+        <span class="summary">Real incident</span>
+        <p class="details">Documented as it happened, on the project's own domain. Use it when a room needs a concrete example rather than a diagram.</p>
       </li>
     </ul>
   </section>
@@ -145,7 +199,7 @@
         <p class="eyebrow">Claim limits</p>
         <h2>Keep the room honest.</h2>
       </div>
-      <p class="section-lede">The consulting package is enablement material. It is not legal advice, a compliance certificate, vendor endorsement, or a hosted product offer.</p>
+      <p class="section-lede">The kit is enablement material. It is not legal advice, a compliance certificate, vendor endorsement, or a hosted product offer.</p>
     </div>
     <ul class="boundary-list">
       <li>AARM is a Cloud Security Alliance standard, not a Context Stack standard.</li>
@@ -157,7 +211,8 @@
     <div class="panel panel-strong">
       <p>ContextBoundary is a specification. <code>contextboundary-gw</code> is a reference implementation. Neither is a product, and neither is offered as a hosted service.</p>
     </div>
-    <p class="text-muted">These five statements are canonical in the <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/README.md" target="_blank" rel="noopener">consulting package README</a>. If they change there, they change here.</p>
+    <p class="text-muted">No engagement has yet been delivered with this kit. The shapes and estimates are a practitioner's best construction, not a record of what happened in a room. That sentence is removed when the first written readout exists.</p>
+    <p class="text-muted">These statements are canonical in the <a href="https://github.com/kannanokannan/ContextBoundary/blob/main/consulting/README.md" target="_blank" rel="noopener">kit README</a>. If they change there, they change here.</p>
   </section>
 </main>
 
