@@ -220,66 +220,35 @@
         <a class="button" href="/mcp/">Use through MCP</a>
       </div>
     </div>
-    <aside class="hero-board" aria-label="Verified sealed decision receipt">
+    <aside class="hero-board" aria-label="Where the boundary sits">
       <div class="board-surface">
-        <p class="board-label">Sealed decision receipt</p>
-        <h2>Approval stopped the agent before change.</h2>
-        <p class="board-subtitle">Verified locally: <code>valid: true</code> · <code>code: intact</code> · <code>event_count: 3</code></p>
+        <p class="board-label">Where the boundary sits</p>
 
-        <div class="receipt-panel">
-          <div class="receipt-status">
-            <span>decision</span>
-            <strong>approve</strong>
-          </div>
-          <dl class="receipt-grid">
-            <div>
-              <dt>rule_id</dt>
-              <dd>R3</dd>
-            </div>
-            <div>
-              <dt>reason</dt>
-              <dd>tier_escalation</dd>
-            </div>
-            <div>
-              <dt>capability</dt>
-              <dd>apply-change</dd>
-            </div>
-            <div>
-              <dt>agent_id</dt>
-              <dd>agent:run-l1</dd>
-            </div>
-            <div>
-              <dt>accountable_owner</dt>
-              <dd>role:run-lead-apac</dd>
-            </div>
-            <div>
-              <dt>tier_in_force</dt>
-              <dd>T1</dd>
-            </div>
-            <div>
-              <dt>obligation</dt>
-              <dd>approval_required: true · approver_role: role:run-lead-apac</dd>
-            </div>
-            <div>
-              <dt>policy_hash</dt>
-              <dd title="8ec5c23a6a20b00c9b7861ce756c838287b9307fc1a972f684f24806502c7188">8ec5c23a…502c7188</dd>
-            </div>
-            <div>
-              <dt>event_hash</dt>
-              <dd title="66a14a2503e300ae3f8c6d8ecfe2b3911f85c4cadf68ff4c8ab520d8afc4c5a8">66a14a25…afc4c5a8</dd>
-            </div>
-            <div>
-              <dt>hash_alg</dt>
-              <dd>sha-256</dd>
-            </div>
-            <div>
-              <dt>timestamp</dt>
-              <dd>2026-07-26T16:18:23.450Z</dd>
-            </div>
-          </dl>
+        <div class="split-side split-model">
+          <p class="split-label">The model may</p>
+          <ul class="split-list">
+            <li>interpret</li><li>propose</li><li>draft</li><li>summarise</li>
+          </ul>
         </div>
 
-        <p class="receipt-note">Verified locally from the reference gateway's AMS example — ephemeral test keys, example policy. Verify it yourself: <code>node audit/verify-receipt.mjs …</code></p>
+        <div class="split-rule" role="separator" aria-label="Boundary: compiled policy, no model in the enforcement path">
+          <span>compiled policy · no model in the path</span>
+        </div>
+
+        <div class="split-side split-system">
+          <p class="split-label">Only deterministic code may</p>
+          <ul class="split-list">
+            <li>authorize</li><li>execute</li><li>seal the receipt</li>
+          </ul>
+        </div>
+
+        <div class="proof-facts">
+          <div class="proof-fact"><b>22 / 22</b><span>conformance scenarios green</span></div>
+          <div class="proof-fact"><b>R1–R6</b><span>AARM Core, CI-verified</span></div>
+          <div class="proof-fact"><b>~10 min</b><span>from a clean clone</span></div>
+        </div>
+
+        <p class="receipt-note">No account, no signup, no vendor. Clone it and run <code>npm run test:conformance</code> yourself.</p>
       </div>
     </aside>
   </section>
