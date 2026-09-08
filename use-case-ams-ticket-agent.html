@@ -161,6 +161,43 @@
     </div>
   </section>
 
+  <section class="section" id="receipt-example">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Evidence</p>
+        <h2>What a sealed receipt looks like <span class="example-tag">Example</span></h2>
+      </div>
+      <p class="section-lede">The section above says the model proposes and the workflow decides. This is that, on one run of the reference gateway — the record it produced, and how to check it yourself.</p>
+    </div>
+
+    <div class="receipt-panel">
+      <div class="stage">
+        <p class="stage-label">What the agent asked for</p>
+        <p class="stage-body">Invoke <code>apply-change</code> as <code>agent:run-l1</code></p>
+      </div>
+
+      <div class="split-rule" role="separator" aria-label="Boundary: deterministic check">
+        <span>deterministic check</span>
+      </div>
+
+      <div class="stage stage-held">
+        <p class="stage-label">What the gateway decided</p>
+        <p class="stage-verdict"><b>approve</b> <span>rule R3 · tier_escalation</span></p>
+        <p class="stage-body">Held, not executed. Requires <code>role:run-lead-apac</code> to approve before anything runs.</p>
+      </div>
+
+      <div class="receipt-seal">
+        <p class="stage-label">Sealed, and checkable by a stranger</p>
+        <div class="receipt-hashes">
+          <div><b>policy</b> <span title="8ec5c23a6a20b00c9b7861ce756c838287b9307fc1a972f684f24806502c7188">8ec5c23a…502c7188</span></div>
+          <div><b>event</b> <span title="66a14a2503e300ae3f8c6d8ecfe2b3911f85c4cadf68ff4c8ab520d8afc4c5a8">66a14a25…afc4c5a8</span></div>
+          <div><b>hash_alg</b> <span>sha-256</span></div>
+        </div>
+        <p class="receipt-note">Produced locally from the reference gateway's AMS example — ephemeral test keys, example policy. Alter the agent signature, any payload field, the hash chain or the gateway seal and each fails with a different named code. Verify it yourself: <code>node audit/verify-receipt.mjs</code></p>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
     <div class="section-head">
       <div>
