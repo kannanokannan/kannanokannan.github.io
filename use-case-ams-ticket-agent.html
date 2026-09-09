@@ -193,7 +193,8 @@
           <div><b>event</b> <span title="66a14a2503e300ae3f8c6d8ecfe2b3911f85c4cadf68ff4c8ab520d8afc4c5a8">66a14a25…afc4c5a8</span></div>
           <div><b>hash_alg</b> <span>sha-256</span></div>
         </div>
-        <p class="receipt-note">Produced locally from the reference gateway's AMS example — ephemeral test keys, example policy. Alter the agent signature, any payload field, the hash chain or the gateway seal and each fails with a different named code. Verify it yourself: <code>node audit/verify-receipt.mjs</code></p>
+        <p class="receipt-note">Produced locally from the reference gateway's AMS example — ephemeral test keys, example policy. Alter the agent signature, any payload field, the hash chain or the gateway seal and each fails with a different named code. Verify it yourself, from a clean clone of the reference gateway:</p>
+        <p class="receipt-note"><code class="cmd">node audit/verify-receipt.mjs examples/ams-ticket-change/receipts/sample-receipt.json --public-keys examples/ams-ticket-change/receipts/sample-public-keys.json</code>It prints <code>valid: true</code>, <code>code: intact</code>, <code>event_count: 3</code>.</p>
       </div>
     </div>
   </section>

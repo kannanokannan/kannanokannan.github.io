@@ -1172,3 +1172,5 @@ pre {
 .receipt-hashes b{color:var(--faint);font-weight:400}
 .example-tag{display:inline-block;margin-left:.5rem;padding:.12rem .55rem;border:1px solid rgba(200,164,93,.4);border-radius:999px;color:var(--gold);font-family:var(--mono);font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;vertical-align:middle}
 @media (max-width:900px){.proof-facts{grid-template-columns:minmax(0,1fr)}}
+
+.receipt-note code.cmd{display:block;margin:.55rem 0;padding:.55rem .7rem;border:1px solid var(--line-soft);border-radius:6px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.74rem;line-height:1.6;color:var(--teal)}

@@ -2,7 +2,7 @@
 
 > Open-source AI governance framework for placing probabilistic intelligence inside deterministic governance boundaries.
 
-dateModified: 2026-09-08
+dateModified: 2026-09-09
 
 The project is about governed AI systems: context ownership, deployment-agnostic egress boundaries, runtime placement, governed delivery, and application-level composition. The canonical website is https://context-stack.org/.
 

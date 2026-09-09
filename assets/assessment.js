@@ -55,12 +55,12 @@
       ]
     },
     delivery: {
-      primary: "Griha",
-      support: "ContextOps",
-      why: "Your issue is about turning governed AI principles into usable workflows, products, or operating routines.",
+      primary: "ContextOps",
+      support: "Griha",
+      why: "Your issue is about turning governed AI principles into usable workflows and operating routines. Start with the ContextOps delivery-model overlays; Griha is a worked example of governed capabilities composed into a running system, not something to adopt.",
       docs: [
-        ["Griha README.md", "https://github.com/kannanokannan/Griha"],
-        ["ContextOps FRAMEWORK.md", "https://github.com/kannanokannan/ContextOps/blob/main/FRAMEWORK.md"],
+        ["ContextOps delivery model overlays", "https://github.com/kannanokannan/ContextOps/blob/main/FRAMEWORK.md"],
+        ["Griha README.md (worked example)", "https://github.com/kannanokannan/Griha"],
         ["Context Stack decisions", "https://github.com/kannanokannan/context-stack/blob/main/DECISIONS.md"]
       ]
     },
