@@ -205,7 +205,7 @@
 
     status.textContent = "Requesting a model-generated explanation...";
     try {
-      const endpoint = window.CONTEXT_STACK_ADVISOR_ENDPOINT || "https://mcp.context-stack.org/advisor";
+      const endpoint = window.CONTEXT_STACK_ADVISOR_ENDPOINT;
       const response = await fetch(endpoint, {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -233,6 +233,10 @@
     const copy = document.querySelector("[data-copy-prompt]");
     if (copy) copy.addEventListener("click", copyPrompt);
 
+    const advisorPanel = document.querySelector("[data-advisor-panel]");
+    // The explanation layer stays dormant until an endpoint is configured. No
+    // endpoint, no panel: the page must not publish a control that points at nothing.
+    if (advisorPanel && window.CONTEXT_STACK_ADVISOR_ENDPOINT) advisorPanel.hidden = false;
     const advisorSubmit = document.querySelector("[data-advisor-submit]");
     if (advisorSubmit) advisorSubmit.addEventListener("click", explainRoute);
 
