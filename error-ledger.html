@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Error Ledger | Context Stack</title>
+<meta name="description" content="Every specification error recorded on the Context Stack project, what caught each one, and the standing rule it produced. Fifty-one incidents, thirty-four written up, three recorded by number only.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="author" content="Context Stack Project">
+<meta name="keywords" content="error ledger, AI governance evidence, specification errors, separation of duties, agent governance discipline">
+<link rel="canonical" href="https://context-stack.org/error-ledger.html">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<link rel="alternate" type="text/plain" title="LLM discovery" href="/llms.txt">
+<meta property="og:title" content="Error Ledger | Context Stack">
+<meta property="og:description" content="Every specification error on this project, what caught it, and the rule it produced.">
+<meta property="og:image" content="https://context-stack.org/hero.png">
+<meta property="og:url" content="https://context-stack.org/error-ledger.html">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Context Stack Error Ledger",
+  "description": "Every specification error recorded on the Context Stack project, what caught each one, and the standing rule it produced.",
+  "url": "https://context-stack.org/error-ledger.html",
+  "disambiguatingDescription": "Context Stack is AARM-aligned. No conformance claim is made. AARM is a Cloud Security Alliance standard, not a Context Stack standard.",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "Context Stack Project",
+    "url": "https://context-stack.org/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Context Stack Project",
+    "url": "https://context-stack.org/"
+  },
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "keywords": [
+    "error ledger",
+    "AI governance",
+    "separation of duties",
+    "specification errors"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Context Stack home"><span class="brand-mark"></span>Context Stack</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/#framework">Framework</a>
+    <a href="/ai-governance-framework.html">Guide</a>
+    <a href="/#assessment">Assessment</a>
+    <a href="/#stack">Stack</a>
+    <a href="/mcp/">MCP</a>
+    <a href="/repositories.html">Repositories</a>
+    <a href="/consulting.html">Consulting</a>
+    <a class="nav-emphasis" href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main class="page-narrow">
+  <p class="eyebrow">Error ledger</p>
+  <h1 class="page-title">Every specification error, and what caught it</h1>
+  <p class="lead">This project argues that probabilistic work belongs inside a deterministic boundary that leaves evidence. It is built that way: one seat specifies and never commits, one builds and is instructed that where the specification and the source disagree the source wins, and one human ratifies anything irreversible. This page is what that produces — the specification errors, and the mechanism that caught each.</p>
+  <div class="doctrine">The number worth reading is not how many errors there were. It is how few were caught by the seat that made them.</div>
+
+  <div class="proof-facts">
+    <div class="proof-fact"><b>51</b><span>incidents recorded</span></div>
+    <div class="proof-fact"><b>34</b><span>written up in full</span></div>
+    <div class="proof-fact"><b>2</b><span>caught by the seat that made them, before reaching anyone</span></div>
+  </div>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">How to read this</p>
+        <h2>A specification error is not a bug.</h2>
+      </div>
+      <p class="section-lede">Everything here is an error in something Chanakya — the specifying seat — wrote: a prompt, a gate, a claim on this site. Some were caught before they reached anyone. Most were not.</p>
+    </div>
+    <ul class="boundary-list">
+      <li>Nothing on this page reached a published surface uncorrected, except where an entry says it did.</li>
+      <li>“Caught by” names the mechanism, not a person's diligence. That is the point of recording it.</li>
+      <li>Numbering began on 2026-08-14, after a session that produced nine errors. The fourteen before it are listed first, unnumbered, because renumbering would break every citation in the governing protocol.</li>
+      <li>Entries #18 to #20 are recorded by number in a contemporaneous handover, but the incidents were never written up. They are left as a gap rather than reconstructed.</li>
+      <li>This ledger is written by the seat it grades. That is author and judge in one chair, and the reason every entry names a source you can check.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Before the ledger</p>
+        <h2>Fourteen, before anyone was counting.</h2>
+      </div>
+      <p class="section-lede">Two sessions that predate the numbering. They are the reason it exists.</p>
+    </div>
+    <p class="text-muted"><b>2026-07-30 — nine in one session.</b> None shipped. All were caught by the builder's gate or by verification before publishing. The accuracy review that followed produced the first four standing rules.</p>
+    <ul class="repo-list">
+      <li>
+        <span class="summary">2026-07-30</span>
+        <p class="details">A ban on grepping for `approved` that forced a revert of correct work.</p>
+      </li>
+      <li>
+        <span class="summary">2026-07-30</span>
+        <p class="details">The test environment variable named wrongly in a prompt.</p>
+      </li>
+      <li>
+        <span class="summary">2026-07-30</span>
+        <p class="details">`AGENT_KEY_REGISTRY` stated as required when it is optional.</p>
+      </li>
+      <li>
+        <span class="summary">2026-07-30</span>
+        <p class="details">“Glama is free” — sign-up gates on a payment card.</p>
+      </li>
+      <li>
+        <span class="summary">2026-07-30</span>
+        <p class="details">Told Kannan to cancel a subscription that did not exist.</p>
+      </li>
+      <li>
+        <span class="summary">2026-07-30</span>
+        <p class="details">Called the awesome-mcp queue dead; the maintainer replied in minutes.</p>
+      </li>
+      <li>
+        <span class="summary">2026-07-30</span>
+        <p class="details">Declined the Docker path on an assumption the approval email disproved.</p>
+      </li>
+      <li>
+        <span class="summary">2026-07-30</span>
+        <p class="details">A SECURITY.md channel instruction that contradicted two existing files.</p>
+      </li>
+      <li>
+        <span class="summary">2026-07-30</span>
+        <p class="details">The merge-3 diff gate mis-specified for a stacked branch.</p>
+      </li>
+    </ul>
+    <p class="text-muted"><b>2026-08-06 to 08-11 — five more.</b> One of them crossed a hard stop.</p>
+    <ul class="repo-list">
+      <li>
+        <span class="summary">2026-08-06 to 08-11 &middot; caught by Kannan</span>
+        <p class="details">Wrangler stated as 4.119.0, “verified from the repo”. Wrangler is not a dependency at all; 4.119.0 was what <code>npx</code> pulled into Chanakya's own sandbox. Kannan's was 4.105.0. An environment claim from inference.</p>
+      </li>
+      <li>
+        <span class="summary">2026-08-06 to 08-11 &middot; caught by self, before it reached a prompt</span>
+        <p class="details">Asserted that two of five routes exceeded the model's context window. The window is 128,000 tokens. One fetch of the model documentation settled it.</p>
+      </li>
+      <li>
+        <span class="summary">2026-08-06 to 08-11 &middot; caught by a live run</span>
+        <p class="details">Predicted every response would truncate at <code>max_tokens: 256</code>. It did not fire on a 1,240-character output. Withdrawn explicitly in the next prompt rather than dropped quietly.</p>
+      </li>
+      <li>
+        <span class="summary">2026-08-06 to 08-11 &middot; caught by Kannan — “are you sure?”</span>
+        <p class="details">PART 24 was written without reading PART 23. It lost the copy separator, the preflight and the divergence report, and instructed Hanuman to run <code>wrangler secret put</code> — crossing the secrets hard stop.</p>
+      </li>
+      <li>
+        <span class="summary">2026-08-06 to 08-11 &middot; caught by the validator's own behaviour</span>
+        <p class="details">An eight-row gate table needed twelve: no negation case, no “approved by” case. The resulting validator rejected valid caveats — which R2 of the same prompt instructed the model to write.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">The numbered ledger</p>
+        <h2>Thirty-seven, since 2026-08-14.</h2>
+      </div>
+      <p class="section-lede">Each entry names the date, what caught it, and the standing rule it produced where it produced one.</p>
+    </div>
+    <ul class="repo-list">
+      <li>
+        <span class="summary">#1 &middot; 2026-08-14/17 &middot; caught by self, before shipping &middot; M3</span>
+        <p class="details">A CI requirement specified without reading <code>pr-gate.yml</code> — it asked for a commit from a <code>contents: read</code> workflow.</p>
+      </li>
+      <li>
+        <span class="summary">#2 &middot; 2026-08-14/17 &middot; caught by Hanuman &middot; M3</span>
+        <p class="details">Predicted the policy hash would change. <code>canonicalize</code> normalises the input, so it could not.</p>
+      </li>
+      <li>
+        <span class="summary">#3 &middot; 2026-08-14/17 &middot; caught by Kannan &middot; inherited boilerplate</span>
+        <p class="details">“No push” carried over from an earlier prompt template. Eight commits sat unbacked-up for four days.</p>
+      </li>
+      <li>
+        <span class="summary">#4 &middot; 2026-08-14/17 &middot; caught by a terminal error &middot; M3</span>
+        <p class="details"><code>npm ci</code> specified for a repository with no lockfile and zero dependencies.</p>
+      </li>
+      <li>
+        <span class="summary">#5 &middot; 2026-08-14/17 &middot; caught by terminal output &middot; M3</span>
+        <p class="details">“GET <code>/advisor</code> returns 405.” It returns 404. The route guard was read instead of the handler.</p>
+      </li>
+      <li>
+        <span class="summary">#6 &middot; 2026-08-14/17 &middot; caught by self, on re-check &middot; M1</span>
+        <p class="details">A <code>/mcp</code> baseline truncated by <code>head -c 900</code> was written into a runbook as expected output — a rollback trigger aimed at a healthy deploy.</p>
+      </li>
+      <li>
+        <span class="summary">#7 &middot; 2026-08-14/17 &middot; caught by self &middot; one surface</span>
+        <p class="details">Sent a stale local file after updating only the Drive copy.</p>
+      </li>
+      <li>
+        <span class="summary">#8 &middot; 2026-08-14/17 &middot; caught by Hanuman's hard gate &middot; M1, M2</span>
+        <p class="details">A <code>--depth 1</code> clone broke <code>merge-base</code>; the conclusion drawn was “disjoint histories”. It nearly caused three branch deletions on a fiction.</p>
+      </li>
+      <li>
+        <span class="summary">#9 &middot; 2026-08-14/17 &middot; caught by outside review &middot; M2, M3</span>
+        <p class="details">Picked the Drive planning folder by which one held newer files rather than resolving its parent chain. An entire session's output went into the retired archive — including the document whose purpose is “do not work from the archive”.</p>
+      </li>
+      <li>
+        <span class="summary">#10 &middot; 2026-08-21/23 &middot; caught by the primary source &middot; M1</span>
+        <p class="details">Asserted that a handover file did not exist in Drive, from a search index that lagged behind a file created twenty minutes earlier. A negative asserted from an incomplete view.</p>
+      </li>
+      <li>
+        <span class="summary">#11 &middot; 2026-08-21/23 &middot; caught by Hanuman's gate &middot; M3</span>
+        <p class="details">A gate specified <code>python3 _verify/verify.py</code> — a path that existed only in a Chanakya-produced bundle, never in the repository.</p>
+      </li>
+      <li>
+        <span class="summary">#12 &middot; 2026-08-21/23 &middot; caught by Hanuman's gate &middot; M3</span>
+        <p class="details">A gate predicted <code>grep -c "^- "</code> would return 17; the actual answer was 30. Two sections were counted and asserted as a whole-file total.</p>
+      </li>
+      <li>
+        <span class="summary">#13 &middot; 2026-08-21/23 &middot; caught by Hanuman's gate &middot; M3</span>
+        <p class="details">Required Hanuman to reproduce a CI failure that could not exist on his machine: he built the committed artifact, so his drift gate was green by construction.</p>
+      </li>
+      <li>
+        <span class="summary">#14 &middot; 2026-08-21/23 &middot; caught by Hanuman's gate &middot; M3</span>
+        <p class="details">Named a local directory <code>Griha</code>; the working copy is <code>Griha-repo</code>. A local path inferred from a GitHub repository name — a trap a two-month-old handover already recorded.</p>
+      </li>
+      <li>
+        <span class="summary">#15 &middot; 2026-08-21/23 &middot; caught by Hanuman's gate &middot; invariant portability</span>
+        <p class="details">Required a working-tree <b>sha256</b> as a reference invariant. On a Windows checkout the files are CRLF: 11,558 − 11,357 = 201 = the line count, exactly one byte per line. No correct machine could have matched it.</p>
+      </li>
+      <li>
+        <span class="summary">#16 &middot; 2026-08-21/23 &middot; caught by an earlier hand-run diff &middot; M1</span>
+        <p class="details">A baseline run reported all seven LICENSE files as altered, including three that were correct — <code>grep -F</code> against a clause that wraps across two lines.</p>
+      </li>
+      <li>
+        <span class="summary">#17 &middot; 2026-08-21/23 &middot; caught by Hanuman's report &middot; one surface</span>
+        <p class="details">Created a replacement file in Drive before trashing the original; the sync client resolved the transient duplicate by renaming one <code>… (1)</code>.</p>
+      </li>
+      <li>
+        <span class="summary">#18&ndash;#20 &middot; 2026-08-23 to 08-30 &middot; detail not recorded</span>
+        <p class="details">Recorded by number in the 2026-08-31 handover, which states that the builder's divergence reporting caught #19 and #20. The incidents themselves were never written up. They are left as a gap; reconstructing them from a count would be the kind of thing this page exists to record.</p>
+      </li>
+      <li>
+        <span class="summary">#21 &middot; 2026-08-31 &middot; caught by Hanuman &middot; never gate an unmeasured value</span>
+        <p class="details">A pre-state table carried a plausible-looking blob id in a row explicitly labelled “not measured”. A hash reads as evidence even when the prose says otherwise.</p>
+      </li>
+      <li>
+        <span class="summary">#22 &middot; 2026-08-31 &middot; caught by a cache-busted re-fetch &middot; treat WebFetch as cached</span>
+        <p class="details">Nearly reported a deploy as failed, from a response cached fifteen minutes earlier. Same family as #10 — a lagging index mistaken for ground truth.</p>
+      </li>
+      <li>
+        <span class="summary">#23 &middot; 2026-09-01 &middot; caught by running the gate before shipping it &middot; test your own gates</span>
+        <p class="details">A draft case study failed its own gate: one vendor token survived in the explanations table.</p>
+      </li>
+      <li>
+        <span class="summary">#24 &middot; 2026-09-03 &middot; caught by Hanuman &middot; M4</span>
+        <p class="details">A revert instruction, <code>git checkout -- &lt;file&gt;</code>, would have discarded the whole session's uncommitted work rather than the one line deleted for a negative test. The trial run printed <b>40 passed</b> — the wipe, on screen — and <b>41 passed</b> was written into the prompt anyway. The measurement was taken and then not read.</p>
+      </li>
+      <li>
+        <span class="summary">#25 &middot; 2026-09-03 &middot; caught by Hanuman &middot; M5</span>
+        <p class="details">An exact diffstat, <code>+3,363 / −45</code>, was pinned to a step that left the wording to the builder. He produced <code>+3,362 / −44</code> and reported it. One line, because the trial had rewritten a tree annotation he correctly left alone.</p>
+      </li>
+      <li>
+        <span class="summary">#26 &middot; 2026-09-03 &middot; caught by Hanuman &middot; M6</span>
+        <p class="details">A whole prompt written on the premise that a pull request was “closed without merging”. It had merged four minutes after the check. On GitHub a merged PR is also a closed PR — “0 open, 3 closed” was misread. The prompt was retracted in full.</p>
+      </li>
+      <li>
+        <span class="summary">#27 &middot; 2026-09-03 &middot; caught by Hanuman &middot; M7</span>
+        <p class="details">A gate searched for <code>“21 scenarios”</code> and missed <code>“21 conformance scenarios”</code>. It gated the phrasing instead of the fact.</p>
+      </li>
+      <li>
+        <span class="summary">#28 &middot; 2026-09-05 &middot; caught by reading the amendment &middot; read the settlement before reopening it</span>
+        <p class="details">Proposed rewording the claim ceiling without reading the amendment section that had already settled exactly that question.</p>
+      </li>
+      <li>
+        <span class="summary">#29 &middot; 2026-09-05 &middot; caught by the amendment's own text &middot; the backlog is not a source</span>
+        <p class="details">Repeated “working-group access has weeks of latency” from a backlog entry. An amendment had already shown it false: no gate, no queue, calls every second Friday.</p>
+      </li>
+      <li>
+        <span class="summary">#30 &middot; 2026-09-08 &middot; caught by diffing the merged result against the pre-tested copy &middot; M10</span>
+        <p class="details">A prompt handed four files inside code fences and said “write this verbatim”, never saying the fence lines were delimiters. All four shipped with a stray closing fence as their last line.</p>
+      </li>
+      <li>
+        <span class="summary">#31 &middot; 2026-09-09 &middot; caught by Hanuman's exact-match check &middot; M11</span>
+        <p class="details">A multi-line find string joined by <code>\n</code> could not match a CRLF working tree. It was written and tested on a Linux clone of the same repository, where the defect is invisible.</p>
+      </li>
+      <li>
+        <span class="summary">#32 &middot; 2026-09-09 &middot; caught by checking every repository after the fact &middot; a claim is not a fact</span>
+        <p class="details">The maintainer page claimed a published error ledger and linked to the claim-ceiling anchor. No ledger was published anywhere. The page was read twice while auditing other claims without the link being followed.</p>
+      </li>
+      <li>
+        <span class="summary">#33 &middot; 2026-09-09 &middot; caught by Hanuman's gate &middot; M2 corollary</span>
+        <p class="details">A gate checked one repository's file against a <i>different</i> surface's wording of the same claim statement. The file was correct; the gate was not.</p>
+      </li>
+      <li>
+        <span class="summary">#34 &middot; 2026-09-09 &middot; caught by the failure of #33 &middot; verify what you inherit</span>
+        <p class="details">A page claimed the five claim statements were canonical in another repository's README. Two of the five differ by scope. Both lists are right; the sentence asserting they were one list was not.</p>
+      </li>
+      <li>
+        <span class="summary">#35 &middot; 2026-09-10 &middot; caught by self, by test-merging instead of asserting &middot; M12</span>
+        <p class="details">Nearly reported that merging a long-lived branch would revert five parts of work, from reading a diff between two tips as a merge preview. It merges cleanly.</p>
+      </li>
+      <li>
+        <span class="summary">#36 &middot; 2026-09-10 &middot; caught by Hanuman's gate &middot; test your own gates</span>
+        <p class="details">A gate battery shipped without being run against the tree it was written from. One expected value was wrong — a phrase that appears twice by design was gated as appearing once.</p>
+      </li>
+      <li>
+        <span class="summary">#37 &middot; 2026-09-11 &middot; caught by the primary source, while building this page &middot; the ledger is not exempt</span>
+        <p class="details">A handover summarised this ledger as “none self-caught by the specifying seat”. The 2026-08-15 log records one of nine caught by that seat before it reached anyone, and #35 above is another. The overstatement was in the summary, not the record.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">What it produced</p>
+        <h2>Twelve rules, none of them “be more careful”.</h2>
+      </div>
+      <p class="section-lede">Each rule exists because a specific error made it necessary. The containment is mechanical, because exhortation does not survive a fast session.</p>
+    </div>
+    <ul class="boundary-list">
+      <li><b>M1</b> — never truncate a source of truth, then treat the truncation as authoritative.</li>
+      <li><b>M2</b> — one read surface per fact. Full clones, not excerpts. A gate's expected value comes from the file the gate runs against.</li>
+      <li><b>M3</b> — claim locality. A folder's identity comes from its parent chain, not its contents; an environment claim comes from that environment, not an inference about it.</li>
+      <li><b>M4</b> — reverting a negative test is not the same operation as reverting a file.</li>
+      <li><b>M5</b> — an exact number may only be pinned to a deterministic step.</li>
+      <li><b>M6</b> — a repository state is true at a timestamp, not in general. A merged pull request is also a closed one.</li>
+      <li><b>M7</b> — gate the fact, not the phrasing.</li>
+      <li><b>M8</b> — diff against the most similar precedent, not the most recent. Recency is not relevance.</li>
+      <li><b>M9</b> — eliminating an option needs the same evidence standard as asserting one.</li>
+      <li><b>M10</b> — when a prompt hands over file content, say that the delimiters are delimiters.</li>
+      <li><b>M11</b> — a find string that spans a line ending is not portable across machines.</li>
+      <li><b>M12</b> — a diff between two tips is not a merge preview. Test-merge before claiming a conflict.</li>
+    </ul>
+    <div class="panel panel-strong">
+      <p>Four of the twelve were written in the last week, which is the honest reading of this page: the rate of new error <i>classes</i> has not yet flattened.</p>
+    </div>
+  </section>
+
+  <section class="section" id="standards-constraints">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">The honest reading</p>
+        <h2>What this does and does not establish.</h2>
+      </div>
+      <p class="section-lede">A ledger is evidence of a mechanism working, not evidence that the specification is now correct.</p>
+    </div>
+    <ul class="boundary-list">
+      <li>It shows that a separation of duties catches what the specifying seat cannot catch in itself. Two of fifty-one were self-caught before reaching anyone.</li>
+      <li>It does not show that the current specification is free of errors. It shows the opposite is likely, and that something other than the author will find them.</li>
+      <li>It is self-reported. No independent observer maintains it. Every entry names a source — a log, a handover, a commit, a builder's report — and those sources are in version control or in the project's working record.</li>
+      <li>The claim limits that govern this site are stated in the <a href="/ai-governance.html#standards-constraints">standards constraints</a> and are gated byte-identically across six surfaces. That gate enforces that the wording is the same everywhere; it cannot establish that a statement is true.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-note">Apache 2.0. Open-source AI governance framework.</p>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/#framework">Framework</a>
+      <a href="/ai-governance-framework.html">Guide</a>
+      <a href="/#assessment">Assessment</a>
+      <a href="/mcp/">MCP</a>
+      <a href="/repositories.html">Repositories</a>
+      <a href="/consulting.html">Consulting</a>
+      <a href="/ai-governance.html">Concepts</a>
+      <a href="/error-ledger.html">Error ledger</a>
+      <a href="/maintainer.html">Maintainer</a>
+      <a href="/llms.txt">llms.txt</a>
+      <a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
