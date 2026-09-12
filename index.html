@@ -162,6 +162,10 @@
     </article>
     <article>
       <time datetime="2026-09-12">Sep 12</time>
+      <p>The homepage now traces a single action through the boundary: the agent proposes, compiled policy decides with no model in the path, the action either runs or is held for a named role, and either outcome emits a sealed receipt bound to a hash of the policy that decided. The trust-boundary comparison above it is unchanged; this is the mechanism underneath it. Dead stylesheet rules left behind when the receipt moved off the homepage are removed in the same change.</p>
+    </article>
+    <article>
+      <time datetime="2026-09-12">Sep 12</time>
       <p>One of the five gated claim statements named the registry wrongly. The AARM registry heads its own page “Builder Registry”, singular, and its footer states that it is a Cloud Security Alliance project — so the attribution was right and the plural was not. Corrected byte-identically across all six gated surfaces, the verifier that enforces them, and the practitioner kit README in ContextBoundary.</p>
     </article>
     <article>
@@ -565,6 +569,33 @@
         </ul>
       </div>
     </div>
+    <p class="text-muted">The same boundary, traced through a single action.</p>
+    <div class="action-flow" role="group" aria-label="What one action does, end to end">
+      <div class="flow-step flow-model">
+        <p class="flow-label">1 &middot; The agent proposes</p>
+        <p class="flow-body">Invoke a tool, read a source, send something outward. Interpretation happens here, and stops here.</p>
+      </div>
+      <div class="flow-arrow" aria-hidden="true"><span>crosses the boundary</span></div>
+      <div class="flow-step flow-gate">
+        <p class="flow-label">2 &middot; Compiled policy decides</p>
+        <p class="flow-body">Deterministic code, with no model in the path. The same policy and the same action produce the same answer on any machine.</p>
+      </div>
+      <div class="flow-arrow" aria-hidden="true"><span>one of two outcomes</span></div>
+      <div class="flow-outcomes">
+        <div class="flow-step flow-allow">
+          <p class="flow-label">3a &middot; Authorized</p>
+          <p class="flow-body">The action runs, under the tier and the owner the policy named.</p>
+        </div>
+        <div class="flow-step flow-hold">
+          <p class="flow-label">3b &middot; Held or denied</p>
+          <p class="flow-body">Nothing runs. Where the rule requires it, a named accountable role must approve first.</p>
+        </div>
+      </div>
+      <div class="flow-seal">
+        <p class="flow-label">Either way &mdash; a sealed receipt</p>
+        <p class="flow-body">Tamper-evident and bound to a hash of the exact policy that decided, so a reviewer can establish which rules were in force. Checkable by someone who was not there.</p>
+      </div>
+    </div>
   </section>
 
   <section class="section">
@@ -673,6 +704,7 @@
       <a href="/repositories.html">Repositories</a>
       <a href="/consulting.html">Consulting</a>
       <a href="/ai-governance.html">Concepts</a>
+      <a href="/error-ledger.html">Error ledger</a>
       <a href="/maintainer.html">Maintainer</a>
       <a href="/llms.txt">llms.txt</a>
       <a href="https://github.com/kannanokannan/context-stack" target="_blank" rel="noopener">GitHub</a>

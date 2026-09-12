@@ -1015,60 +1015,6 @@ pre {
   margin-top: 1.25rem;
 }
 
-.receipt-status {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.9rem 1rem;
-  background: rgba(120, 170, 118, 0.12);
-  border: 1px solid rgba(120, 170, 118, 0.42);
-  border-radius: 12px;
-}
-
-.receipt-status span,
-.receipt-grid dt {
-  color: var(--faint);
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.receipt-status strong {
-  color: var(--green);
-  font-family: var(--mono);
-  font-size: 1.1rem;
-}
-
-.receipt-grid {
-  display: grid;
-  gap: 1px;
-  margin: 0;
-  background: rgba(232, 225, 213, 0.1);
-  border: 1px solid rgba(232, 225, 213, 0.12);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.receipt-grid div {
-  display: grid;
-  grid-template-columns: minmax(7.5rem, 0.42fr) minmax(0, 1fr);
-  gap: 0.8rem;
-  align-items: start;
-  padding: 0.72rem 0.85rem;
-  background: rgba(13, 16, 15, 0.58);
-}
-
-.receipt-grid dd {
-  min-width: 0;
-  margin: 0;
-  color: var(--text);
-  font-family: var(--mono);
-  font-size: 0.76rem;
-  overflow-wrap: anywhere;
-}
-
 .receipt-note {
   margin: 1rem 0 0;
   color: var(--muted);
@@ -1119,7 +1065,6 @@ pre {
 }
 
 @media (max-width: 900px) {
-  .receipt-grid div,
   .boundary-divider {
     grid-template-columns: 1fr;
     text-align: left;
@@ -1176,3 +1121,23 @@ pre {
 .receipt-note code.cmd{display:block;margin:.55rem 0;padding:.55rem .7rem;border:1px solid var(--line-soft);border-radius:6px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.74rem;line-height:1.6;color:var(--teal)}
 
 .panel p + p{margin-top:.75rem}
+
+.action-flow{display:grid;gap:.75rem;margin-top:1.5rem}
+.flow-step{padding:1rem 1.1rem;border:1px solid var(--line-soft);border-radius:10px;background:var(--surface)}
+.flow-label{margin:0 0 .4rem;color:var(--faint);font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}
+.flow-body{margin:0;color:var(--muted);font-size:.92rem}
+.flow-model{border-color:rgba(109,127,163,.42)}
+.flow-model .flow-label{color:var(--blue)}
+.flow-gate{border-color:rgba(79,169,154,.45);background:rgba(79,169,154,.06)}
+.flow-gate .flow-label{color:var(--teal)}
+.flow-gate .flow-body{color:var(--text)}
+.flow-allow{border-color:rgba(120,170,118,.42)}
+.flow-allow .flow-label{color:var(--green)}
+.flow-hold{border-color:rgba(180,108,99,.45)}
+.flow-hold .flow-label{color:var(--red)}
+.flow-outcomes{display:grid;gap:.75rem;grid-template-columns:repeat(2,minmax(0,1fr))}
+.flow-seal{padding:1rem 1.1rem;border:1px dashed var(--line);border-radius:10px;background:var(--bg-soft)}
+.flow-seal .flow-label{color:var(--gold)}
+.flow-arrow{display:flex;align-items:center;justify-content:center;gap:.6rem;color:var(--teal);font-family:var(--mono);font-size:.64rem;letter-spacing:.11em;text-transform:uppercase}
+.flow-arrow::before,.flow-arrow::after{content:"";height:1px;flex:1;background:var(--line)}
+@media (max-width:640px){.flow-outcomes{grid-template-columns:minmax(0,1fr)}}
