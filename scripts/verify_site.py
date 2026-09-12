@@ -33,7 +33,7 @@ def read(path):
 CONSTRAINTS = [
     "AARM is a Cloud Security Alliance standard, not a Context Stack standard.",
     "Context Stack is AARM-aligned. No conformance claim is made.",
-    "Not listed on the CSA Builders Registry.",
+    "Not listed on the CSA Builder Registry.",
     "No independent conformance review has been undertaken.",
     "Griha is a reference implementation, not a product.",
 ]
