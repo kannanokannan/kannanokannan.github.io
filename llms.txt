@@ -2,7 +2,7 @@
 
 > Open-source AI governance framework for placing probabilistic intelligence inside deterministic governance boundaries.
 
-dateModified: 2026-09-11
+dateModified: 2026-09-12
 
 The project is about governed AI systems: context ownership, deployment-agnostic egress boundaries, runtime placement, governed delivery, and application-level composition. The canonical website is https://context-stack.org/.
 
@@ -10,7 +10,7 @@ The project is about governed AI systems: context ownership, deployment-agnostic
 
 - AARM is a Cloud Security Alliance standard, not a Context Stack standard.
 - Context Stack is AARM-aligned. No conformance claim is made.
-- Not listed on the CSA Builders Registry.
+- Not listed on the CSA Builder Registry.
 - No independent conformance review has been undertaken.
 - Griha is a reference implementation, not a product.
 
