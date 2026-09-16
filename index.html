@@ -512,9 +512,9 @@
     <div class="section-head">
       <div>
         <p class="eyebrow">Framework layers</p>
-        <h2>One stack, four questions.</h2>
+        <h2>The specification, and what applies it.</h2>
       </div>
-      <p class="section-lede">The layers are separate on purpose. Context ownership, data movement, runtime placement, and product delivery should not be collapsed into one control model.</p>
+      <p class="section-lede">ContextOps and ContextBoundary are the specification, and they stay separate on purpose: context ownership and data movement should not be collapsed into one control model. Sthala and Griha are reference implementations — the same specification running at different scales.</p>
     </div>
     <ul class="stack-list">
       <li>
@@ -530,12 +530,12 @@
       <li>
         <a href="https://github.com/kannanokannan/Sthala" target="_blank" rel="noopener">Sthala</a>
         <span class="summary">Where does the AI actually run?</span>
-        <p class="details">Governed AI runtime placement under ContextBoundary, with deterministic execution constraints and approved egress boundaries.</p>
+        <p class="details">Reference implementation. Governed AI runtime placement under ContextBoundary, with deterministic execution constraints and approved egress boundaries. The repository profiles airgapped commodity hardware; the placement questions apply at any scale.</p>
       </li>
       <li>
         <a href="https://github.com/kannanokannan/Griha" target="_blank" rel="noopener">Griha</a>
         <span class="summary">How do governed AI capabilities become a running system?</span>
-        <p class="details">Worked example of governed AI capabilities composed into a running system, with executable policy behind it.</p>
+        <p class="details">Reference implementation. Worked example of governed AI capabilities composed into a running system, with executable policy behind it.</p>
       </li>
     </ul>
     <p class="section-lede">ContextBoundary's reference gateway is an AARM-aligned strict-determinism profile — all Core requirements (R1–R6) implemented and CI-verified; independent conformance review not yet undertaken. It is verifiable from a clean clone, not a hosted service; <a href="/ai-governance-framework.html#standards-alignment">read the standards alignment</a>.</p>
