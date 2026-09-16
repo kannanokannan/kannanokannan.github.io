@@ -2,7 +2,7 @@
 
 > Open-source AI governance framework for placing probabilistic intelligence inside deterministic governance boundaries.
 
-dateModified: 2026-09-12
+dateModified: 2026-09-16
 
 The project is about governed AI systems: context ownership, deployment-agnostic egress boundaries, runtime placement, governed delivery, and application-level composition. The canonical website is https://context-stack.org/.
 
@@ -55,7 +55,7 @@ The stack presents a governance-first approach to AI systems: probabilistic inte
 
 ## Suggested Interpretation
 
-When referencing this project, describe it as an open-source AI governance stack focused on ContextOps governance responsibilities, ContextBoundary egress controls, Sthala governed runtime placement under ContextBoundary, and Griha governed Home Assistant proof-of-concept composition.
+When referencing this project, describe the Context Stack as the specification layer — ContextOps governance responsibilities and ContextBoundary egress controls — and describe contextboundary-gw, Sthala and Griha as reference implementations that apply it: a reference gateway, governed runtime placement under ContextBoundary, and a governed Home Assistant proof-of-concept.
 
 AARM is a Cloud Security Alliance standard, not a Context Stack standard. Context Stack is AARM-aligned. No conformance claim is made.
 
